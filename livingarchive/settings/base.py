@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from djangokeys import DjangoKeys
 
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'wagtailgmaps',
     'blog',
     'module',
+    # 'wagtail',
     'wagtailvideos',
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.forms',
@@ -55,7 +57,8 @@ INSTALLED_APPS = [
     'wagtail.admin',
     'wagtail.core',
     'captcha',
-   
+    'wagtailmenus',
+    'user_group_management',
     'wagtailstreamforms',
     'modelcluster',
     'taggit',
@@ -69,6 +72,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'livingarchive',
     
 ]
 
@@ -116,6 +120,7 @@ AUTHENTICATION_BACKENDS = [
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
+    
 ]
 
 WSGI_APPLICATION = 'livingarchive.wsgi.application'
@@ -265,8 +270,11 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_USERNAME_BLACKLIST = ["admin","moderator","editor"]
 ACCOUNT_USERNAME_MIN_LENGTH = 3
 ACCOUNT_SIGNUP_FORM_CLASS = 'livingarchive.forms.LocalSignupForm'
-RECAPTCHA_PUBLIC_KEY = "6Lcq534jAAAAAI9rFdVDOopTwSp92z9dox_FEEj1"
-RECAPTCHA_PRIVATE_KEY = "6Lcq534jAAAAAGcusv7gqVgT1vMY6CCaBJmkBE-A"
+RECAPTCHA_PUBLIC_KEY = "6LdIMWMmAAAAAF5D0LJkeFzjSqOU14B5H4FZHgVw"
+RECAPTCHA_PRIVATE_KEY = "6LdIMWMmAAAAADhhq-Moc6CePI9S_rVhpK0YegWB"
+
+#RECAPTCHA_PUBLIC_KEY = "6Lcq534jAAAAAI9rFdVDOopTwSp92z9dox_FEEj1"
+#RECAPTCHA_PRIVATE_KEY = "6Lcq534jAAAAAGcusv7gqVgT1vMY6CCaBJmkBE-A"
 
 #RECAPTCHA_PUBLIC_KEY = "6LfsIJYjAAAAAMOjW3Ysb4IdNQyxRatxcu1PmavL"
 #RECAPTCHA_PRIVATE_KEY = "6LfsIJYjAAAAAJMlLIzgjkOXPAdnqffi1syvL3o2"
