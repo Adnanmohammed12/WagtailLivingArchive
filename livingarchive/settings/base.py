@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'wagtailgmaps',
     'blog',
     'module',
-    'wagtail',
     'wagtailvideos',
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.forms',
