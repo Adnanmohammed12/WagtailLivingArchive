@@ -32,7 +32,6 @@ from wagtail.admin.edit_handlers import (
     MultiFieldPanel
 )
 from captcha.fields import ReCaptchaField
-
 #from wagtail.core import blocks
 #from wagtailstreamforms.fields import BaseField, register
   #get google maps api key from .env
