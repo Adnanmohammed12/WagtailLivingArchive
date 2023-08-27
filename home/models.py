@@ -1,3 +1,4 @@
+import os
 from pydoc import classname
 from django.db import models
 from django.shortcuts import render
@@ -9,7 +10,19 @@ from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
 )
+from modelcluster.fields import ParentalKey
+from wagtail.admin.edit_handlers import (
+    FieldPanel,
+    FieldRowPanel,
+    InlinePanel,
+    MultiFieldPanel
+)
+from wagtail.core.fields import RichTextField
+from wagtail.contrib.forms.models import AbstractFormField, AbstractEmailForm
 
+from wagtailcaptcha.models import WagtailCaptchaEmailForm
+from dotenv import load_dotenv
+load_dotenv()
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 
 from wagtail.admin.edit_handlers import (
@@ -18,41 +31,39 @@ from wagtail.admin.edit_handlers import (
     InlinePanel,
     MultiFieldPanel
 )
-#from captcha.fields import ReCaptchaField
+from captcha.fields import ReCaptchaField
+
 #from wagtail.core import blocks
 #from wagtailstreamforms.fields import BaseField, register
-
-from djangokeys import DjangoKeys
-keys=DjangoKeys ("./livingarchive/settings/.env")
+  #get google maps api key from .env
+api_key=str(os.getenv("API_KEY"))
 
 #@register('recaptcha')
-class HomePage(AbstractEmailForm, Page):
+class HomePage(WagtailCaptchaEmailForm, Page):
     """Home Page model"""
     templates = "home/home_page.html"
 
     """to limit only 1 home page"""
     max_count = 1
-    #captcha = ReCaptchaField()
-    #get google maps api key from .env
-    api_key = keys.str("API_KEY")
+    captcha = ReCaptchaField()
 
     banner_title = models.CharField(max_length=100, blank=False, null=True)
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
 
-    content_panels = AbstractEmailForm.content_panels + Page.content_panels + [
-        FieldPanel ("banner_title"),
-        FieldPanel ("intro"),
-            InlinePanel("form_fields", label="Form Fields"),
-            FieldPanel ("thank_you_text"),
-            MultiFieldPanel([
-                FieldRowPanel([
-                    FieldPanel("from_address", classname="col6"),
-                    FieldPanel("to_address", classname="col6"),
-                ]),
-                FieldPanel("subject"),
+    landing_page_template = "home/home_page_landing.html"
 
-            ], heading="Email Settings"),
+    content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel('intro'),
+        InlinePanel('form_fields', label='Form Fields'),
+        FieldPanel('thank_you_text'),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('from_address', classname="col6"),
+                FieldPanel('to_address', classname="col6"),
+            ]),
+            FieldPanel("subject"),
+        ], heading="Email Settings"),
     ]
     
     #to get detail from blog detail page
