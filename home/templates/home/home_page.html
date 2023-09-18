@@ -138,108 +138,61 @@
             </head>
 
             <body>
-            <div id="map"></div>
-            <script type="text/javascript">
-                var string = ""
-                string = "{% for post in posts %}{{ post.title }}@*&!{% endfor %}";
-                var title = string.split("@*&!");
-
-                string = "{% for post in posts %}{{ post.address }}@*&!{% endfor %}";
-                var address = string.split("@*&!");
-
-                string = "{% for post in posts %}{{ post.intro }}@*&!{% endfor %}";
-                var intro = string.split("@*&!");
-
-                string = "{% for post in posts %}{{ post.body }}@*&!{% endfor %}";
-                var body = string.split("@*&!");
-
-                string = "{% for post in posts %}{{ post.url }}@*&!{% endfor %}";
-                var url = string.split("@*&!");
-
-                string = "{% for post in posts %}{{ post.owner.id }}@*&!{% endfor %}";
-                var uids = string.split("@*&!");
-
-                string = "{% for post in posts %}{% image post.image fill-200x150 as blog_img %}{{blog_img.url}}@*&!{% endfor %}";
-                var imgs = string.split("@*&!");
-
-                var blogSet = {}
-                for (let i = 0; i < uids.length; i++) {
-                    const uid = uids[i]
-                    if (uid === '') continue
-                    if (typeof (blogSet[uid]) === 'undefined') blogSet[uid] = []
-                    blogSet[uid].push([title[i], address[i], i, intro[i], body[i], url[i], imgs[i], uid])
-                }
-
-                var map = L.map('map', {attributionControl: false}).setView([-24.3000384, 140.0782539], 4);
-
-                L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-                    maxZoom: 20,
-                    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-                }).addTo(map);
-
-                L.Control.geocoder().addTo(map);
-
-                let markerSet = []
-
-                var myMarkerClusterGroup = L.markerClusterGroup()
-
-                var colorSet = ['#F79327', '#DB005B', '#FF55BB', '#FFD3A3', '#FCFFB2', '#B6EAFA', '#B2A4FF', '#FF6969', '#B4FF9F']
-
-                let index = 0
-                for (const uid in blogSet) {
-                    if (Object.hasOwnProperty.call(blogSet, uid)) {
-                        const locations = blogSet[uid];
-                        const pointList = []
-
-                        for (i = 0; i < locations.length; i++) {
-                            const l = locations[i][1].split(",");
-                            try {
-                                // marker
-                                const marker = L.marker([parseFloat(l[0]), parseFloat(l[1])]);
-
-                                // line point
-                                pointList.push(new L.LatLng(parseFloat(l[0]), parseFloat(l[1])))
-
-                                let popup = L.popup().setLatLng([parseFloat(l[0]), parseFloat(l[1])]).setContent(
-                                    '<div id="content">' +
-                                    '<div id="siteNotice">' +
-                                    "</div>" +
-                                    '<h2 style="font-size:150%;" id="firstHeading" class="firstHeading">' + locations[i][0] + '</h1>' +
-                                    '<div id="bodyContent">' +
-                                    '<p style="font-size:130%;">' + locations[i][3] + '</p>' +
-                                    '<a href="' + locations[i][5] + '">' +
-                                    (locations[i][6] ? "<img src='" + locations[i][6] + "' width='200' height='150'> </a>" : '') +
-                                    '<p>Link: <a href="' + locations[i][5] + '">' + locations[i][0] +
-                                    "</p>" +
-                                    "</div>" +
-                                    "</div>")
-
-                                marker.bindPopup(popup, {minWidth: 650}).openPopup();
-
-                                markerSet.push(marker);
-                                myMarkerClusterGroup.addLayer(marker)
-                            } catch (error) {
-                                console.log(error)
-                            }
-                        }
-
-                        // draw line
-                        if (pointList.length > 1) {
-                            const myCustomColour = colorSet[index % colorSet.length]
-                            index++
-                            new L.Polyline(pointList, {
-                                color: myCustomColour,// myCustomColour,
-                                weight: 1.5,
-                                opacity: 0.7,
-                                smoothFactor: 1
-                            }).addTo(map)
-                        }
-                    }
-                }
-
-                map.addLayer(myMarkerClusterGroup)
-            </script>
+                <div id="map"></div>
+                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+                <script>
+                    // Define the map
+                    const map = L.map('map').setView([51.505, -0.13], 13); // Set your initial coordinates and zoom level
+                    // Add the image overlay layer with adjusted bounds for increased width
+                    const imageUrl = 'https://anyimage.io/storage/uploads/e5de371304e8a183f5c88238e0a6ad25';
+                    const imageBounds = [[51.53, -0.20], [51.48, -0.06]]; // Adjust the bounds for increased width
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                    // Define your animal parts and corresponding YouTube links
+                    const animalParts = [
+                        { name: 'Cashew nuts1', coords: [51.526, -0.11], videoUrl: 'https://www.youtube.com/' }, //mounth
+                        { name: 'Cashew nuts2', coords: [51.526, -0.14], videoUrl: 'https://www.youtube.com/' },//mounth
+                          { name: 'Cashew nuts3', coords: [51.526, -0.122], videoUrl: 'https://gymbeam.com/blog/cashew-nuts-everything-you-need-to-know/' },//nuts
+                          { name: 'Cashew nuts4', coords: [51.526, -0.132], videoUrl: 'https://gymbeam.com/blog/cashew-nuts-everything-you-need-to-know/' },//nuts
+                         { name: 'Cashew nuts5', coords: [51.526, -0.098], videoUrl: 'https://www.youtube.com/' },//eyes
+                           { name: 'Cashew nut6', coords: [51.526, -0.157], videoUrl: 'https://www.youtube.com/' },//eyes
+            
+                       // { name: 'Messanger sticks', coords: [51.505, -0.094], videoUrl: 'https://www.youtube.com/' },
+                       // { name: 'Messanger sticks', coords: [51.505, -0.16], videoUrl: 'https://www.youtube.com/' },
+                        { name: 'Far', coords: [51.504, -0.11], videoUrl: 'https://www.twinkl.com.pk/blog/is-the-emu-the-national-bird-of-australia-unofficially-yes/' },
+                        { name: 'Far', coords: [51.504, -0.14], videoUrl: 'http://blogs.evergreen.edu/ebestiary/blog/2012/05/29/emu/' },
+                        { name: 'Emus3', coords: [51.513, -0.108], videoUrl: 'https://www.youtube.com/' },
+                         { name: 'Emus4', coords: [51.513, -0.147], videoUrl: 'https://www.youtube.com/' },
+                          { name: 'Spear', coords: [51.498, -0.14], videoUrl: 'https://spearbreakers.fandom.com/wiki/Emu' },
+            
+            
+                        { name: 'Far', coords: [51.509, -0.08], videoUrl: 'https://blogs.loc.gov/folklife/2019/08/a-possum-crisp-and-brown-the-opossum-and-american-foodways//' },
+                        { name: 'Possun', coords: [51.510, -0.18], videoUrl: 'https://projectpossum.org/blog/page/4/' },
+                         { name: 'Possun3', coords: [51.521, -0.083], videoUrl: 'https://www.youtube.com/' },
+                         { name: 'Possun2', coords: [51.522, -0.175], videoUrl: 'https://www.youtube.com/' },
+            
+                         { name: 'Possun1', coords: [51.498, -0.170], videoUrl: 'https://www.youtube.com/' },
+                          { name: 'Possun4', coords: [51.497, -0.090], videoUrl: 'https://projectpossum.org/blog/page/4/' },
+                       
+            
+            
+                        { name: 'Spear', coords: [51.498, -0.123], videoUrl: 'Shttps://spearbreakers.fandom.com/wiki/Emu' },
+                        { name: 'Topography', coords: [51.485, -0.096], videoUrl: 'https://opentopography.org/' },
+                        { name: 'Topography', coords: [51.485, -0.079], videoUrl: 'https://opentopography.org/' },
+                        { name: 'Topography', coords: [51.485, -0.120], videoUrl: 'https://opentopography.org/' },
+                        { name: 'Topography', coords: [51.485, -0.163], videoUrl: 'https://opentopography.org/' },
+                        { name: 'Topography', coords: [51.485, -0.182], videoUrl: 'https://opentopography.org/' },
+                        { name: 'Topography', coords: [51.485, -0.140], videoUrl: 'https://opentopography.org/' },
+            
+                        // Add more parts as needed
+                    ];
+                    // Add markers for each animal part
+                    animalParts.forEach(part => {
+                        const marker = L.marker(part.coords).addTo(map);
+                        marker.bindPopup(`<a href="${part.videoUrl}" target="_blank">${part.name}</a>`);
+                    });
+                </script>
             </body>
+            </html>
         </div>
     </section>
 
