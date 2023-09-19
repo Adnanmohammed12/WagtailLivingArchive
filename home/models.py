@@ -10,6 +10,7 @@ from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
 )
+from wagtail.core.models import Page
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import (
     FieldPanel,
@@ -31,8 +32,7 @@ from wagtail.admin.edit_handlers import (
     InlinePanel,
     MultiFieldPanel
 )
-from captcha.fields import ReCaptchaField
-
+from captcha.fields import CaptchaField
 #from wagtail.core import blocks
 #from wagtailstreamforms.fields import BaseField, register
   #get google maps api key from .env
@@ -45,7 +45,7 @@ class HomePage(WagtailCaptchaEmailForm, Page):
 
     """to limit only 1 home page"""
     max_count = 1
-    captcha = ReCaptchaField()
+    captcha = CaptchaField()
 
     banner_title = models.CharField(max_length=100, blank=False, null=True)
     intro = RichTextField(blank=True)
