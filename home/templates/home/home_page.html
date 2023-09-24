@@ -147,48 +147,32 @@
                     const imageUrl = 'https://anyimage.io/storage/uploads/e5de371304e8a183f5c88238e0a6ad25';
                     const imageBounds = [[51.53, -0.20], [51.48, -0.06]]; // Adjust the bounds for increased width
                     L.imageOverlay(imageUrl, imageBounds).addTo(map);
-                    // Define your animal parts and corresponding YouTube links
+                    // Define your animal parts and corresponding YouTube links with multiple coordinates
                     const animalParts = [
-                        { name: 'Cashew nuts1', coords: [51.526, -0.11], videoUrl: 'https://www.youtube.com/' }, //mounth
-                        { name: 'Cashew nuts2', coords: [51.526, -0.14], videoUrl: 'https://www.youtube.com/' },//mounth
-                          { name: 'Cashew nut', coords: [51.526, -0.122], videoUrl: 'https://gymbeam.com/blog/cashew-nuts-everything-you-need-to-know/' },//nuts
-                          { name: 'Cashew nut', coords: [51.526, -0.132], videoUrl: 'https://gymbeam.com/blog/cashew-nuts-everything-you-need-to-know/' },//nuts
-                         { name: 'Eye', coords: [51.526, -0.098], videoUrl: 'https://www.youtube.com/' },//eyes
-                           { name: 'Eye', coords: [51.526, -0.157], videoUrl: 'https://www.youtube.com/' },//eyes
-            
-                       // { name: 'Messanger sticks', coords: [51.505, -0.094], videoUrl: 'https://www.youtube.com/' },
-                       // { name: 'Messanger sticks', coords: [51.505, -0.16], videoUrl: 'https://www.youtube.com/' },
-                        { name: 'Far', coords: [51.504, -0.11], videoUrl: 'https://www.twinkl.com.pk/blog/is-the-emu-the-national-bird-of-australia-unofficially-yes/' },
-                        { name: 'Far', coords: [51.504, -0.14], videoUrl: 'http://blogs.evergreen.edu/ebestiary/blog/2012/05/29/emu/' },
-                        { name: 'Emus3', coords: [51.513, -0.108], videoUrl: 'https://www.youtube.com/' },
-                         { name: 'Emus4', coords: [51.513, -0.147], videoUrl: 'https://www.youtube.com/' },
-                          { name: 'Spear', coords: [51.498, -0.14], videoUrl: 'https://spearbreakers.fandom.com/wiki/Emu' },
-            
-            
-                        { name: 'Far', coords: [51.509, -0.08], videoUrl: 'https://blogs.loc.gov/folklife/2019/08/a-possum-crisp-and-brown-the-opossum-and-american-foodways//' },
-                        { name: 'Possun', coords: [51.510, -0.18], videoUrl: 'https://projectpossum.org/blog/page/4/' },
-                         { name: 'Possun3', coords: [51.521, -0.083], videoUrl: 'https://www.youtube.com/' },
-                         { name: 'Possun2', coords: [51.522, -0.175], videoUrl: 'https://www.youtube.com/' },
-            
-                         { name: 'Possun1', coords: [51.498, -0.170], videoUrl: 'https://www.youtube.com/' },
-                          { name: 'Possun4', coords: [51.497, -0.090], videoUrl: 'https://projectpossum.org/blog/page/4/' },
-                       
-            
-            
-                        { name: 'Spear', coords: [51.498, -0.123], videoUrl: 'Shttps://spearbreakers.fandom.com/wiki/Emu' },
-                        { name: 'Topography', coords: [51.485, -0.096], videoUrl: 'https://opentopography.org/' },
-                        { name: 'Topography', coords: [51.485, -0.079], videoUrl: 'https://opentopography.org/' },
-                        { name: 'Topography', coords: [51.485, -0.120], videoUrl: 'https://opentopography.org/' },
-                        { name: 'Topography', coords: [51.485, -0.163], videoUrl: 'https://opentopography.org/' },
-                        { name: 'Topography', coords: [51.485, -0.182], videoUrl: 'https://opentopography.org/' },
-                        { name: 'Topography', coords: [51.485, -0.140], videoUrl: 'https://opentopography.org/' },
-            
-                        // Add more parts as needed
+                        {
+                            name: 'Cashew nuts',
+                            coordinates: [
+                                [51.526, -0.11], // mouth
+                            ],
+                            videoUrl: 'https://gymbeam.com/blog/cashew-nuts-everything-you-need-to-know/',
+                            imageUrl: 'https://gymbeam.com/blog/wp-content/uploads/fly-images/140329/kesu-orechy-clanok_1_-min-437x279.png', // Add the URL of the image for this part
+                            description: 'Cashew nuts have positive effects on our body across our entire body. Despite the fact that half of their composition is fat, they help us to lose weight. At the same time, they prevent the formation of gallstones and scientific studies have confirmed that they are an effective fighter against digestive tract cancer. Learn why cashews can rightly be called a superfood..',
+                        },
+                        // Add more parts with multiple coordinates as needed
                     ];
-                    // Add markers for each animal part
+                    // Loop through animal parts
                     animalParts.forEach(part => {
-                        const marker = L.marker(part.coords).addTo(map);
-                        marker.bindPopup(`<a href="${part.videoUrl}" target="_blank">${part.name}</a>`);
+                        part.coordinates.forEach(coords => {
+                            const marker = L.marker(coords).addTo(map);
+                            const popupContent = `
+                                <div class="custom-popup">
+                                    <img src="${part.imageUrl}" alt="${part.name}">
+                                    <p>${part.description}</p>
+                                    <a href="${part.videoUrl}" target="_blank">Click on this link</a>
+                                </div>
+                            `;
+                            marker.bindPopup(popupContent);
+                        });
                     });
                 </script>
             </body>
