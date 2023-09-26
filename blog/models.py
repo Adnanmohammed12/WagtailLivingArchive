@@ -3,15 +3,15 @@ from django.db import models
 import os
 from django.template.response import TemplateResponse
 from dotenv import load_dotenv
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
-from wagtail.core.blocks import StructBlock, CharBlock
-from wagtail.core.fields import RichTextField
-from wagtail.core.fields import StreamField
+from wagtail.admin.panels import FieldPanel #, StreamFieldPanel
+from wagtail.blocks import StructBlock, CharBlock
+from wagtail.fields import RichTextField
+from wagtail.fields import StreamField
 
 # from mirage import fields
-from wagtail.core.models import Page
+from wagtail.models import Page
 from wagtail.documents.blocks import DocumentChooserBlock
-from wagtail.images.edit_handlers import ImageChooserPanel
+#from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.models import PAGE_TEMPLATE_VAR
 from wagtailgmaps.edit_handlers import MapFieldPanel
 from wagtailvideos.edit_handlers import VideoChooserPanel
@@ -86,16 +86,17 @@ class BlogDetailPage(Page):
             ("link", LinkBlock()),
         ],
         blank=True,
+        use_json_field=True
     )
 
     content_panels = Page.content_panels + [
         FieldPanel("date"),
         FieldPanel("intro"),
-        ImageChooserPanel("image"),
+       FieldPanel("image"),
         VideoChooserPanel("video"),
         FieldPanel("body", classname="full"),
         MapFieldPanel("address", latlng=True, zoom=4),
-        StreamFieldPanel("links"),
+       FieldPanel("links"),
     ]
     subpage_types = []
 

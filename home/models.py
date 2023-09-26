@@ -4,21 +4,21 @@ from django.db import models
 from django.shortcuts import render
 from blog.models import BlogDetailPage
 from modelcluster.fields import ParentalKey
-from wagtail.core.models import Page
-from wagtail.core.fields import RichTextField
+from wagtail.models import Page
+from wagtail.fields import RichTextField
 from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
 )
-from wagtail.core.models import Page
+from wagtail.models import Page
 from modelcluster.fields import ParentalKey
-from wagtail.admin.edit_handlers import (
+from wagtail.admin.panels import (
     FieldPanel,
     FieldRowPanel,
     InlinePanel,
     MultiFieldPanel
 )
-from wagtail.core.fields import RichTextField
+from wagtail.fields import RichTextField
 from wagtail.contrib.forms.models import AbstractFormField, AbstractEmailForm
 
 from wagtailcaptcha.models import WagtailCaptchaEmailForm
@@ -26,14 +26,14 @@ from dotenv import load_dotenv
 load_dotenv()
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 
-from wagtail.admin.edit_handlers import (
+from wagtail.admin.panels import (
     FieldPanel,
     FieldRowPanel,
     InlinePanel,
     MultiFieldPanel
 )
 from captcha.fields import ReCaptchaField
-#from wagtail.core import blocks
+#from wagtail import blocks
 #from wagtailstreamforms.fields import BaseField, register
   #get google maps api key from .env
 api_key=str(os.getenv("API_KEY"))

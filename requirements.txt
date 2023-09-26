@@ -49,7 +49,6 @@ wagtail==4.2.2
 wagtail-django-recaptcha==1.0
 wagtail-generic-chooser==0.5.1
 wagtailgmaps==1.0.1
-wagtailstreamforms==4.0.4
 wagtailvideos==4.2.0
 wagtailmenus==3.1.8
 webencodings==0.5.1

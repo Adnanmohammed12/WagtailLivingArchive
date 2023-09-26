@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='bloglistingpage',
             name='featured_articles',
-            field=wagtail.fields.StreamField([('featured_article', wagtail.blocks.StructBlock([('title', wagtail.blocks.CharBlock(required=True)), ('image', wagtail.blocks.StructBlock([('image', wagtail.blocks.PageChooserBlock(required=True)), ('caption', wagtail.blocks.CharBlock(required=False))], required=True)), ('content', wagtail.blocks.RichTextBlock(required=True))], icon='doc-full-inverse'))], blank=True, use_json_field=None),
+            field=wagtail.fields.StreamField([('featured_article', wagtail.blocks.StructBlock([('title', wagtail.blocks.CharBlock(required=True)), ('image', wagtail.blocks.StructBlock([('image', wagtail.blocks.PageChooserBlock(required=True)), ('caption', wagtail.blocks.CharBlock(required=False))], required=True)), ('content', wagtail.blocks.RichTextBlock(required=True))], icon='doc-full-inverse'))], blank=True, use_json_field=True),
         ),
         migrations.CreateModel(
             name='FeaturedArticle',
