@@ -32,22 +32,18 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/home_page.css' %}">
-   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-                <title>Animal Parts Multiple Markers </title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Animal Parts Multiple Markers </title>
 
-                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-                    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-                <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-                    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-                <link rel="stylesheet"
-                    href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-                <link rel="stylesheet"
-                    href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-                <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"
-                    crossorigin=""></script>
-                <link rel="stylesheet"
-                    href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-                <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
 </head>
 
@@ -65,8 +61,7 @@
                     <li class="nav-item"><a class="nav-link" href="/#image">Image</a></li>
 
                     <li class="nav-item"><a class="nav-link" href="/#context">Context</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#details">Details</a></li>
                     <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
                     <li class="nav-item"><a class="nav-link"
                             href="https://archive.indigenousengineering.org.au/">Archive</a></li>
@@ -91,11 +86,11 @@
     </nav>
     <!-- Masthead-->
     <header class="masthead">
-            <div class="container">
-                <div class="masthead-subheading">A Living Archive</div>
-                </div>
+        <div class="container">
+            <div class="masthead-subheading">A Living Archive</div>
+        </div>
 
-            </div>
+        </div>
         </a>
     </header>
     <!-- Context-->
@@ -104,11 +99,13 @@
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Context for material </h2>
                 <h3 class="section-subheading text-muted">
-                    The material collected on this site was initiated 
+                    The material collected on this site was initiated
                     as an image</h3>
 
                 <p>
-            The central image is from a painting by Narritjin Maymuru Djarrakpi of the Guwak bird and his country. It was chosen as Howard Morphy provides some detail of the location shown on the paining in his work 
+                    The central image is from a painting by Narritjin Maymuru Djarrakpi of the Guwak bird and his
+                    country. It was chosen as Howard Morphy provides some detail of the location shown on the paining in
+                    his work
                 <p>
             </div>
         </div>
@@ -122,17 +119,17 @@
                 <h3 class="section-subheading text-muted">Click on the image icons to see details .</h3>
             </div>
 
-                <div id="map"></div>
+            <div id="map"></div>
         </div>
     </section>
- <script type="text/javascript" src="{% static 'js/leafletscript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/leafletscript.js' %}"></script>
 
 
-    <!-- Projects Grid-->
-    <section class="page-section bg-light" id="projects">
+    <!-- Details Grid-->
+    <section class="page-section bg-light" id="details">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Public Information on Projects</h2>
+                <h2 class="section-heading text-uppercase">Details of Image</h2>
                 <h3 class="section-subheading text-muted">Latest Pages</h3>
             </div>
             <div class="row">
@@ -162,55 +159,6 @@
         </div>
     </section>
 
-    <!-- Team-->
-    <section class="page-section bg-light" id="team">
-        <div class="container">
-            <!--        <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Team</h2>
-                    <h3 class="section-subheading text-muted"> </h3>
-                </div>
-	-->
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="team-member mx-auto">
-                        <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/3.jpg' %}" alt="..." />
-                        <h4>Zexin Huang</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <!--
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                            -->
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="team-member mx-auto">
-                        <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/1.jpg' %}" alt="..." />
-                        <h4>Yunzhu Wang</h4>
-                        <p class="text-muted">Lead Programmer</p>
-                        {# <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>#}
-                        {# <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>#}
-                        {# <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>#}
-                    </div>
-                </div>
-                {# <div class="col-lg-4">#}
-                    {# <div class="team-member">#}
-                        {# <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/3.jpg' %}" alt="..." />#}
-                        {# <h4>Tofan</h4>#}
-                        {# <p class="text-muted">Lead Developer</p>#}
-                        {# <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>#}
-                        {# <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>#}
-                        {# <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>#}
-                        {# </div>#}
-                    {# </div>#}
-            </div>
-            <!--
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">None of us, including me, ever do great things. But we can all do small things, with great love, and together we can do something wonderful. - Mother Teresa</p></div>
-                </div>
-                -->
-        </div>
-    </section>
     <!-- Clients-->
     <div class="py-5">
         <div class="container">
