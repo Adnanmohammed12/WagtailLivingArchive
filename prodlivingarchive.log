@@ -1367,3 +1367,941 @@ Not Found: /blog/" + locations[i][6] + "
 Not Found: /blog/
 [pid: 1970769|app: 0|req: 51/51] 1.121.138.128 () {62 vars in 1268 bytes} [Mon Oct 16 12:05:40 2023] GET /blog/ => generated 6989 bytes in 24 msecs (HTTP/1.1 404) 6 headers in 215 bytes (1 switches on core 0)
 [pid: 1970769|app: 0|req: 52/52] 1.121.138.128 () {58 vars in 1157 bytes} [Mon Oct 16 12:05:50 2023] GET / => generated 22524 bytes in 22 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Oct 20 22:58:40 2023] ***
+compiled with version: 9.3.0 on 27 October 2021 13:42:40
+os: Linux-5.4.0-136-generic #153-Ubuntu SMP Thu Nov 24 15:56:58 UTC 2022
+nodename: studentlearn1
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /var/www/html/LeafletLivingArchive
+detected binary path: /usr/local/bin/uwsgi
+setuid() to 8
+chdir() to ./
+your processes number limit is 31476
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8002 fd 3
+Python version: 3.8.10 (default, May 26 2023, 14:05:08)  [GCC 9.4.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x556f8a1deba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/wsgi.py", line 125, in __init__
+    self.load_middleware()
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 40, in load_middleware
+    middleware = import_string(middleware_path)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/var/www/html/LeafletLivingArchive/./blog/middleware.py", line 3, in <module>
+    from django.contrib.sessions.models import Session
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/models.py", line 1, in <module>
+    from django.contrib.sessions.base_session import AbstractBaseSession, BaseSessionManager
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/base_session.py", line 26, in <module>
+    class AbstractBaseSession(models.Model):
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/base.py", line 127, in __new__
+    app_config = apps.get_containing_app_config(module)
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "./livingarchive/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.8/dist-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.8/dist-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/config.py", line 193, in create
+    import_module(entry)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'dashboard'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2109679)
+spawned uWSGI worker 1 (pid: 2109683, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 2109683|app: -1|req: -1/1] 1.121.138.128 () {60 vars in 1188 bytes} [Fri Oct 20 22:58:43 2023] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Oct 20 23:00:44 2023] ***
+compiled with version: 9.3.0 on 27 October 2021 13:42:40
+os: Linux-5.4.0-136-generic #153-Ubuntu SMP Thu Nov 24 15:56:58 UTC 2022
+nodename: studentlearn1
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /var/www/html/LeafletLivingArchive
+detected binary path: /usr/local/bin/uwsgi
+setuid() to 8
+chdir() to ./
+your processes number limit is 31476
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8002 fd 3
+Python version: 3.8.10 (default, May 26 2023, 14:05:08)  [GCC 9.4.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x557affab2ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/wsgi.py", line 125, in __init__
+    self.load_middleware()
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 40, in load_middleware
+    middleware = import_string(middleware_path)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/var/www/html/LeafletLivingArchive/./blog/middleware.py", line 3, in <module>
+    from django.contrib.sessions.models import Session
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/models.py", line 1, in <module>
+    from django.contrib.sessions.base_session import AbstractBaseSession, BaseSessionManager
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/base_session.py", line 26, in <module>
+    class AbstractBaseSession(models.Model):
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/base.py", line 127, in __new__
+    app_config = apps.get_containing_app_config(module)
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+/usr/local/lib/python3.8/dist-packages/wagtailgmaps/edit_handlers.py:4: RemovedInWagtail50Warning: Importing from wagtail.admin.edit_handlers is deprecated. Use wagtail.admin.panels instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.admin.edit_handlers import FieldPanel
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:46: RemovedInWagtail50Warning: Importing from wagtail.core.models.audit_log is deprecated. Use wagtail.models.audit_log instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .audit_log import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:52: RemovedInWagtail50Warning: Importing from wagtail.core.models.collections is deprecated. Use wagtail.models.collections instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .collections import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:62: RemovedInWagtail50Warning: Importing from wagtail.core.models.copying is deprecated. Use wagtail.models.copying instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .copying import _copy, _copy_m2m_relations, _extract_field_data  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:63: RemovedInWagtail50Warning: Importing from wagtail.core.models.i18n is deprecated. Use wagtail.models.i18n instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .i18n import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:72: RemovedInWagtail50Warning: Importing from wagtail.core.models.sites is deprecated. Use wagtail.models.sites instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .sites import Site, SiteManager, SiteRootPath  # noqa
+/var/www/html/LeafletLivingArchive/./home/models.py:7: RemovedInWagtail50Warning: Importing from wagtail.core.models is deprecated. Use wagtail.models instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.core.models import Page
+/var/www/html/LeafletLivingArchive/./home/models.py:8: RemovedInWagtail50Warning: Importing from wagtail.core.fields is deprecated. Use wagtail.fields instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.core.fields import RichTextField
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x557affab2ba0 pid: 2109714 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2109714)
+spawned uWSGI worker 1 (pid: 2109716, cores: 1)
+[pid: 2109716|app: 0|req: 1/1] 1.121.138.128 () {60 vars in 1188 bytes} [Fri Oct 20 23:00:50 2023] GET / => generated 12568 bytes in 1038 msecs (HTTP/1.1 200) 9 headers in 458 bytes (1 switches on core 0)
+[pid: 2109716|app: 0|req: 2/2] 1.121.138.128 () {60 vars in 1193 bytes} [Fri Oct 20 23:00:58 2023] GET /blog/ => generated 11236 bytes in 26 msecs (HTTP/1.1 200) 7 headers in 223 bytes (1 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+!!! uWSGI process 2109716 got Segmentation Fault !!!
+*** backtrace of 2109716 ***
+uwsgi(uwsgi_backtrace+0x2e) [0x557afe0a7c9e]
+uwsgi(uwsgi_segfault+0x27) [0x557afe0a8087]
+/lib/x86_64-linux-gnu/libc.so.6(+0x43090) [0x7fbc0e968090]
+/lib/x86_64-linux-gnu/libc.so.6(+0x46876) [0x7fbc0e96b876]
+/lib/x86_64-linux-gnu/libc.so.6(on_exit+0) [0x7fbc0e96ba60]
+uwsgi(+0x424a5) [0x557afe05a4a5]
+uwsgi(end_me+0x2b) [0x557afe0a4a5b]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x14420) [0x7fbc0f641420]
+/lib/x86_64-linux-gnu/libc.so.6(epoll_wait+0x5e) [0x7fbc0ea4446e]
+uwsgi(event_queue_wait+0x39) [0x557afe09ab19]
+uwsgi(wsgi_req_accept+0x11a) [0x557afe057a1a]
+uwsgi(simple_loop_run+0xb6) [0x557afe0a3966]
+uwsgi(simple_loop+0x14) [0x557afe0a3754]
+uwsgi(uwsgi_ignition+0x2a4) [0x557afe0a83e4]
+uwsgi(uwsgi_worker_run+0x276) [0x557afe0acb46]
+uwsgi(uwsgi_run+0x454) [0x557afe0ad0c4]
+uwsgi(+0x3ee24) [0x557afe056e24]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3) [0x7fbc0e949083]
+uwsgi(_start+0x2e) [0x557afe056e5e]
+*** end of backtrace ***
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Oct 20 23:04:26 2023] ***
+compiled with version: 9.3.0 on 27 October 2021 13:42:40
+os: Linux-5.4.0-136-generic #153-Ubuntu SMP Thu Nov 24 15:56:58 UTC 2022
+nodename: studentlearn1
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /var/www/html/LeafletLivingArchive
+detected binary path: /usr/local/bin/uwsgi
+setuid() to 8
+chdir() to ./
+your processes number limit is 31476
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8002 fd 3
+Python version: 3.8.10 (default, May 26 2023, 14:05:08)  [GCC 9.4.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x56352b515ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/wsgi.py", line 125, in __init__
+    self.load_middleware()
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 40, in load_middleware
+    middleware = import_string(middleware_path)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/var/www/html/LeafletLivingArchive/./blog/middleware.py", line 3, in <module>
+    from django.contrib.sessions.models import Session
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/models.py", line 1, in <module>
+    from django.contrib.sessions.base_session import AbstractBaseSession, BaseSessionManager
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/base_session.py", line 26, in <module>
+    class AbstractBaseSession(models.Model):
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/base.py", line 127, in __new__
+    app_config = apps.get_containing_app_config(module)
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+/usr/local/lib/python3.8/dist-packages/wagtailgmaps/edit_handlers.py:4: RemovedInWagtail50Warning: Importing from wagtail.admin.edit_handlers is deprecated. Use wagtail.admin.panels instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.admin.edit_handlers import FieldPanel
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:46: RemovedInWagtail50Warning: Importing from wagtail.core.models.audit_log is deprecated. Use wagtail.models.audit_log instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .audit_log import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:52: RemovedInWagtail50Warning: Importing from wagtail.core.models.collections is deprecated. Use wagtail.models.collections instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .collections import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:62: RemovedInWagtail50Warning: Importing from wagtail.core.models.copying is deprecated. Use wagtail.models.copying instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .copying import _copy, _copy_m2m_relations, _extract_field_data  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:63: RemovedInWagtail50Warning: Importing from wagtail.core.models.i18n is deprecated. Use wagtail.models.i18n instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .i18n import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:72: RemovedInWagtail50Warning: Importing from wagtail.core.models.sites is deprecated. Use wagtail.models.sites instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .sites import Site, SiteManager, SiteRootPath  # noqa
+/var/www/html/LeafletLivingArchive/./home/models.py:7: RemovedInWagtail50Warning: Importing from wagtail.core.models is deprecated. Use wagtail.models instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.core.models import Page
+/var/www/html/LeafletLivingArchive/./home/models.py:8: RemovedInWagtail50Warning: Importing from wagtail.core.fields is deprecated. Use wagtail.fields instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.core.fields import RichTextField
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x56352b515ba0 pid: 2109888 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2109888)
+spawned uWSGI worker 1 (pid: 2109890, cores: 1)
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Oct 20 23:05:39 2023] ***
+compiled with version: 9.3.0 on 27 October 2021 13:42:40
+os: Linux-5.4.0-136-generic #153-Ubuntu SMP Thu Nov 24 15:56:58 UTC 2022
+nodename: studentlearn1
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /var/www/html/LeafletLivingArchive
+detected binary path: /usr/local/bin/uwsgi
+setuid() to 8
+chdir() to ./
+your processes number limit is 31476
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8002 fd 3
+Python version: 3.8.10 (default, May 26 2023, 14:05:08)  [GCC 9.4.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55a8672e2ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/wsgi.py", line 125, in __init__
+    self.load_middleware()
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 40, in load_middleware
+    middleware = import_string(middleware_path)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/var/www/html/LeafletLivingArchive/./blog/middleware.py", line 3, in <module>
+    from django.contrib.sessions.models import Session
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/models.py", line 1, in <module>
+    from django.contrib.sessions.base_session import AbstractBaseSession, BaseSessionManager
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/base_session.py", line 26, in <module>
+    class AbstractBaseSession(models.Model):
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/base.py", line 127, in __new__
+    app_config = apps.get_containing_app_config(module)
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.8/dist-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+unable to load app 0 (mountpoint='') (callable not found or import error)
+/usr/local/lib/python3.8/dist-packages/wagtailgmaps/edit_handlers.py:4: RemovedInWagtail50Warning: Importing from wagtail.admin.edit_handlers is deprecated. Use wagtail.admin.panels instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.admin.edit_handlers import FieldPanel
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:46: RemovedInWagtail50Warning: Importing from wagtail.core.models.audit_log is deprecated. Use wagtail.models.audit_log instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .audit_log import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:52: RemovedInWagtail50Warning: Importing from wagtail.core.models.collections is deprecated. Use wagtail.models.collections instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .collections import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:62: RemovedInWagtail50Warning: Importing from wagtail.core.models.copying is deprecated. Use wagtail.models.copying instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .copying import _copy, _copy_m2m_relations, _extract_field_data  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:63: RemovedInWagtail50Warning: Importing from wagtail.core.models.i18n is deprecated. Use wagtail.models.i18n instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .i18n import (  # noqa
+/usr/local/lib/python3.8/dist-packages/wagtail/core/models/__init__.py:72: RemovedInWagtail50Warning: Importing from wagtail.core.models.sites is deprecated. Use wagtail.models.sites instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from .sites import Site, SiteManager, SiteRootPath  # noqa
+/var/www/html/LeafletLivingArchive/./home/models.py:7: RemovedInWagtail50Warning: Importing from wagtail.core.models is deprecated. Use wagtail.models instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.core.models import Page
+/var/www/html/LeafletLivingArchive/./home/models.py:8: RemovedInWagtail50Warning: Importing from wagtail.core.fields is deprecated. Use wagtail.fields instead. See https://docs.wagtail.org/en/stable/releases/3.0.html#changes-to-module-paths
+  from wagtail.core.fields import RichTextField
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55a8672e2ba0 pid: 2109918 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2109918)
+spawned uWSGI worker 1 (pid: 2109920, cores: 1)
+[pid: 2109920|app: 0|req: 1/1] 188.165.87.107 () {38 vars in 608 bytes} [Sat Oct 21 01:21:10 2023] GET / => generated 12568 bytes in 1101 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 2/2] 37.187.215.248 () {38 vars in 608 bytes} [Sat Oct 21 03:21:46 2023] GET / => generated 12568 bytes in 37 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 3/3] 51.254.49.104 () {38 vars in 607 bytes} [Sat Oct 21 03:34:50 2023] GET / => generated 12568 bytes in 28 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 4/4] 51.254.49.99 () {38 vars in 606 bytes} [Sat Oct 21 06:16:12 2023] GET / => generated 12568 bytes in 41 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 5/5] 205.210.31.144 () {30 vars in 371 bytes} [Sat Oct 21 15:02:38 2023] GET / => generated 12568 bytes in 33 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 6/6] 205.210.31.166 () {32 vars in 659 bytes} [Sat Oct 21 20:17:53 2023] GET / => generated 12568 bytes in 39 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 7/7] 65.154.226.171 () {52 vars in 925 bytes} [Sun Oct 22 01:11:04 2023] GET / => generated 12568 bytes in 30 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 8/8] 65.154.226.171 () {58 vars in 1085 bytes} [Sun Oct 22 01:11:05 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 9/9] 65.154.226.171 () {58 vars in 1091 bytes} [Sun Oct 22 01:11:05 2023] GET /livingarchive/static/css/home_page.css => generated 772 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 10/10] 65.154.226.171 () {58 vars in 1081 bytes} [Sun Oct 22 01:11:08 2023] GET /livingarchive/static/js/leafletscript.js => generated 6511 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 11/11] 65.154.226.171 () {58 vars in 1186 bytes} [Sun Oct 22 01:11:08 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 12/12] 65.154.226.171 () {58 vars in 1151 bytes} [Sun Oct 22 01:11:09 2023] GET /livingarchive/static/assets/img/logos/cdu.png => generated 8575 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 288 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 13/13] 65.154.226.171 () {58 vars in 1069 bytes} [Sun Oct 22 01:11:09 2023] GET /livingarchive/static/js/scripts.js => generated 1860 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 14/14] 65.154.226.171 () {58 vars in 1186 bytes} [Sun Oct 22 01:11:09 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 15/15] 45.81.39.206 () {38 vars in 528 bytes} [Sun Oct 22 21:57:45 2023] GET / => generated 12568 bytes in 31 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 16/16] 188.165.87.103 () {38 vars in 608 bytes} [Mon Oct 23 00:02:02 2023] GET / => generated 12568 bytes in 42 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 17/17] 51.254.49.109 () {38 vars in 607 bytes} [Mon Oct 23 02:01:04 2023] GET / => generated 12568 bytes in 35 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 18/18] 37.187.215.254 () {38 vars in 608 bytes} [Mon Oct 23 02:24:48 2023] GET / => generated 12568 bytes in 28 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 19/19] 51.254.49.98 () {38 vars in 606 bytes} [Mon Oct 23 04:06:07 2023] GET / => generated 12568 bytes in 34 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 20/20] 205.210.31.46 () {32 vars in 411 bytes} [Mon Oct 23 14:01:12 2023] GET / => generated 12568 bytes in 37 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 21/21] 138.80.92.158 () {62 vars in 1175 bytes} [Tue Oct 24 02:13:06 2023] GET / => generated 12568 bytes in 40 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 22/22] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:13:10 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 23/23] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:13:10 2023] GET /livingarchive/static/css/home_page.css => generated 772 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 24/24] 138.80.92.158 () {56 vars in 1068 bytes} [Tue Oct 24 02:13:10 2023] GET /livingarchive/static/js/leafletscript.js => generated 6511 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 25/25] 138.80.92.158 () {56 vars in 1173 bytes} [Tue Oct 24 02:13:10 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 26/26] 138.80.92.158 () {56 vars in 1138 bytes} [Tue Oct 24 02:13:10 2023] GET /livingarchive/static/assets/img/logos/cdu.png => generated 8575 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 288 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 27/27] 138.80.92.158 () {56 vars in 1173 bytes} [Tue Oct 24 02:13:10 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 28/28] 138.80.92.158 () {56 vars in 1056 bytes} [Tue Oct 24 02:13:10 2023] GET /livingarchive/static/js/scripts.js => generated 1860 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 29/29] 138.80.92.158 () {62 vars in 1175 bytes} [Tue Oct 24 02:13:27 2023] GET / => generated 12568 bytes in 22 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 30/30] 138.80.92.158 () {60 vars in 1195 bytes} [Tue Oct 24 02:13:34 2023] GET /login/ => generated 4873 bytes in 32 msecs (HTTP/1.1 200) 8 headers in 358 bytes (1 switches on core 0)
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/dist-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: attempt to write a readonly database
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/allauth/account/views.py", line 149, in dispatch
+    return super(LoginView, self).dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/allauth/account/views.py", line 77, in dispatch
+    response = super(RedirectAuthenticatedUserMixin, self).dispatch(
+  File "/usr/local/lib/python3.8/dist-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/allauth/account/views.py", line 105, in post
+    response = self.form_valid(form)
+  File "/usr/local/lib/python3.8/dist-packages/allauth/account/views.py", line 162, in form_valid
+    return form.login(self.request, redirect_url=success_url)
+  File "/usr/local/lib/python3.8/dist-packages/allauth/account/forms.py", line 196, in login
+    ret = perform_login(
+  File "/usr/local/lib/python3.8/dist-packages/allauth/account/utils.py", line 171, in perform_login
+    adapter.login(request, user)
+  File "/usr/local/lib/python3.8/dist-packages/allauth/account/adapter.py", line 467, in login
+    django_login(request, user)
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/auth/__init__.py", line 118, in login
+    request.session.cycle_key()
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/backends/base.py", line 304, in cycle_key
+    self.create()
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/backends/db.py", line 54, in create
+    self.save(must_create=True)
+  File "/usr/local/lib/python3.8/dist-packages/django/contrib/sessions/backends/db.py", line 86, in save
+    obj.save(
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/base.py", line 812, in save
+    self.save_base(
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/base.py", line 863, in save_base
+    updated = self._save_table(
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/base.py", line 1006, in _save_table
+    results = self._do_insert(
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/base.py", line 1047, in _do_insert
+    return manager._insert(
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/query.py", line 1791, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.8/dist-packages/django/db/models/sql/compiler.py", line 1660, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.8/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.8/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.8/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.8/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.8/dist-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: attempt to write a readonly database
+[pid: 2109920|app: 0|req: 31/31] 138.80.92.158 () {68 vars in 1410 bytes} [Tue Oct 24 02:13:36 2023] POST /login/ => generated 203974 bytes in 821 msecs (HTTP/1.1 500) 7 headers in 243 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 32/32] 138.80.92.158 () {68 vars in 1410 bytes} [Tue Oct 24 02:27:54 2023] POST /login/ => generated 0 bytes in 741 msecs (HTTP/1.1 302) 11 headers in 709 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 33/33] 138.80.92.158 () {62 vars in 1412 bytes} [Tue Oct 24 02:27:55 2023] GET / => generated 12715 bytes in 30 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 34/34] 138.80.92.158 () {60 vars in 1385 bytes} [Tue Oct 24 02:27:58 2023] GET /admin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 112 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 35/35] 138.80.92.158 () {60 vars in 1387 bytes} [Tue Oct 24 02:27:58 2023] GET /admin/ => generated 21767 bytes in 209 msecs (HTTP/1.1 200) 11 headers in 569 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 36/36] 138.80.92.158 () {56 vars in 1165 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/css/core.css?v=2f15d667 => generated 225997 bytes in 8 msecs via sendfile() (HTTP/1.1 200) 8 headers in 290 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 37/37] 138.80.92.158 () {56 vars in 1170 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailvideos/css/summary-override.css => generated 364 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 299 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 38/38] 138.80.92.158 () {56 vars in 1185 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-3.6.0.min.js?v=2f15d667 => generated 89531 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 39/39] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-ui-1.13.2.min.js?v=2f15d667 => generated 254377 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 40/40] 138.80.92.158 () {56 vars in 1149 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/icons.js?v=2f15d667 => generated 650 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 301 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 41/41] 138.80.92.158 () {56 vars in 1195 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery.datetimepicker.js?v=2f15d667 => generated 61449 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 42/42] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery.autosize.js?v=2f15d667 => generated 2990 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 43/43] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-transition.js?v=2f15d667 => generated 876 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 316 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 44/44] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-modal.js?v=2f15d667 => generated 3891 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 45/45] 138.80.92.158 () {56 vars in 1165 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/vendor/tag-it.js?v=2f15d667 => generated 8042 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 303 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 46/46] 138.80.92.158 () {56 vars in 1064 bytes} [Tue Oct 24 02:27:59 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 47/47] 138.80.92.158 () {56 vars in 1147 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/core.js?v=2f15d667 => generated 54810 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 302 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 48/48] 138.80.92.158 () {56 vars in 1151 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/vendor.js?v=2f15d667 => generated 266499 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 49/49] 138.80.92.158 () {56 vars in 1163 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/wagtailadmin.js?v=2f15d667 => generated 13556 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 50/50] 138.80.92.158 () {56 vars in 1173 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/telepath/telepath.js?v=2f15d667 => generated 4529 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 51/51] 138.80.92.158 () {56 vars in 1153 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/js/sidebar.js?v=2f15d667 => generated 44293 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 52/52] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:27:59 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 53/53] 138.80.92.158 () {58 vars in 1249 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/fonts/wagtail.woff => generated 24408 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 294 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 54/54] 138.80.92.158 () {56 vars in 1223 bytes} [Tue Oct 24 02:27:59 2023] GET /livingarchive/static/wagtailadmin/images/favicon.ico?v=2f15d667 => generated 2666 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 55/55] 138.80.92.158 () {58 vars in 1221 bytes} [Tue Oct 24 02:28:04 2023] GET /admin/api/main/pages/?child_of=1&for_explorer=1&fields=parent => generated 1510 bytes in 37 msecs (HTTP/1.1 200) 10 headers in 361 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 56/56] 138.80.92.158 () {60 vars in 1261 bytes} [Tue Oct 24 02:28:05 2023] GET /admin/pages/3/ => generated 44972 bytes in 219 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 57/57] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:28:05 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 58/58] 138.80.92.158 () {56 vars in 1175 bytes} [Tue Oct 24 02:28:05 2023] GET /livingarchive/static/wagtailadmin/js/modal-workflow.js?v=2f15d667 => generated 3669 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 311 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 59/59] 138.80.92.158 () {56 vars in 1171 bytes} [Tue Oct 24 02:28:05 2023] GET /livingarchive/static/wagtailadmin/js/bulk-actions.js?v=2f15d667 => generated 5600 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 309 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 60/60] 138.80.92.158 () {56 vars in 1175 bytes} [Tue Oct 24 02:28:05 2023] GET /livingarchive/static/wagtailadmin/js/privacy-switch.js?v=2f15d667 => generated 2842 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 311 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 61/61] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:28:05 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 62/62] 138.80.92.158 () {60 vars in 1293 bytes} [Tue Oct 24 02:28:08 2023] GET /admin/pages/3/add_subpage/ => generated 0 bytes in 13 msecs (HTTP/1.1 302) 10 headers in 385 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 63/63] 138.80.92.158 () {60 vars in 1317 bytes} [Tue Oct 24 02:28:09 2023] GET /admin/pages/add/blog/blogdetailpage/3/ => generated 87487 bytes in 190 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 64/64] 138.80.92.158 () {56 vars in 1219 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/css/panels/draftail.css?v=2f15d667 => generated 23094 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 293 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 65/65] 138.80.92.158 () {56 vars in 1225 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/css/panels/streamfield.css?v=2f15d667 => generated 1016 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 295 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 66/66] 138.80.92.158 () {56 vars in 1096 bytes} [Tue Oct 24 02:28:09 2023] GET /admin/jsi18n/ => generated 3343 bytes in 8 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 67/67] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/comments.js?v=2f15d667 => generated 53404 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 306 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 68/68] 138.80.92.158 () {56 vars in 1205 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/vendor/rangy-core.js?v=2f15d667 => generated 47124 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 69/69] 138.80.92.158 () {56 vars in 1211 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/vendor/mousetrap.min.js?v=2f15d667 => generated 4630 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 70/70] 138.80.92.158 () {56 vars in 1205 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/expanding-formset.js?v=2f15d667 => generated 1594 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 71/71] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/page-editor.js?v=2f15d667 => generated 8484 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 72/72] 138.80.92.158 () {56 vars in 1197 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/preview-panel.js?v=2f15d667 => generated 4599 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 73/73] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/vendor/xregexp.min.js?v=2f15d667 => generated 62142 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 309 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 74/74] 138.80.92.158 () {56 vars in 1197 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/vendor/urlify.js?v=2f15d667 => generated 3745 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 303 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 75/75] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/workflow-action.js?v=2f15d667 => generated 3051 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 76/76] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/workflow-status.js?v=2f15d667 => generated 1679 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 77/77] 138.80.92.158 () {56 vars in 1219 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-tooltip.js?v=2f15d667 => generated 6361 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 78/78] 138.80.92.158 () {56 vars in 1209 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/schedule-publishing.js?v=2f15d667 => generated 278 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 79/79] 138.80.92.158 () {56 vars in 1205 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/date-time-chooser.js?v=2f15d667 => generated 3298 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 80/80] 138.80.92.158 () {56 vars in 1211 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailimages/js/image-chooser-modal.js?v=2f15d667 => generated 3586 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 316 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 81/81] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/draftail.js?v=2f15d667 => generated 293352 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 82/82] 138.80.92.158 () {56 vars in 1211 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailembeds/js/embed-chooser-modal.js?v=2f15d667 => generated 358 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 83/83] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/page-chooser-modal.js?v=2f15d667 => generated 5275 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 84/84] 138.80.92.158 () {56 vars in 1213 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser-modal.js?v=2f15d667 => generated 2233 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 85/85] 138.80.92.158 () {56 vars in 1203 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/telepath/widgets.js?v=2f15d667 => generated 7180 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 86/86] 138.80.92.158 () {56 vars in 1199 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailimages/js/image-chooser.js?v=2f15d667 => generated 2179 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 87/87] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailadmin/js/telepath/blocks.js?v=2f15d667 => generated 37276 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 88/88] 138.80.92.158 () {56 vars in 1219 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser-telepath.js?v=2f15d667 => generated 1840 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 322 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 89/89] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser.js?v=2f15d667 => generated 1733 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 313 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 90/90] 138.80.92.158 () {56 vars in 1199 bytes} [Tue Oct 24 02:28:09 2023] GET /livingarchive/static/wagtailvideos/js/video-chooser.js?v=2f15d667 => generated 87 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 91/91] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:28:09 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 92/92] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:28:09 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 23 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 93/93] 138.80.92.158 () {60 vars in 1306 bytes} [Tue Oct 24 02:28:09 2023] DELETE /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 17 bytes in 12 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 94/94] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:28:09 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 95/95] 138.80.92.158 () {62 vars in 1408 bytes} [Tue Oct 24 02:28:09 2023] POST /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 42 bytes in 35 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 96/96] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:28:09 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 21 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 97/97] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:28:09 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 98/98] 138.80.92.158 () {58 vars in 1167 bytes} [Tue Oct 24 02:31:50 2023] GET /admin/videos/chooser/ => generated 8370 bytes in 54 msecs (HTTP/1.1 200) 10 headers in 462 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 99/99] 138.80.92.158 () {68 vars in 1550 bytes} [Tue Oct 24 02:32:05 2023] POST /admin/pages/add/blog/blogdetailpage/3/ => generated 88645 bytes in 131 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 100/100] 138.80.92.158 () {56 vars in 1096 bytes} [Tue Oct 24 02:32:05 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 101/101] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:32:05 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 102/102] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:32:05 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 27 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 103/103] 138.80.92.158 () {60 vars in 1306 bytes} [Tue Oct 24 02:32:05 2023] DELETE /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 17 bytes in 14 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 104/104] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:32:05 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 105/105] 138.80.92.158 () {62 vars in 1408 bytes} [Tue Oct 24 02:32:05 2023] POST /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 42 bytes in 36 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 106/106] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:32:05 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 19 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 107/107] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:32:05 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 108/108] 138.80.92.158 () {60 vars in 1188 bytes} [Tue Oct 24 02:32:57 2023] GET / => generated 12715 bytes in 25 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 109/109] 138.80.92.158 () {56 vars in 1170 bytes} [Tue Oct 24 02:32:59 2023] GET /livingarchive/static/assets/favicon.ico => generated 2238 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 110/110] 138.80.92.158 () {60 vars in 1188 bytes} [Tue Oct 24 02:33:29 2023] GET / => generated 12715 bytes in 22 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 111/111] 138.80.92.158 () {56 vars in 1116 bytes} [Tue Oct 24 02:33:29 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 112/112] 138.80.92.158 () {56 vars in 1122 bytes} [Tue Oct 24 02:33:29 2023] GET /livingarchive/static/css/home_page.css => generated 772 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 113/113] 138.80.92.158 () {56 vars in 1112 bytes} [Tue Oct 24 02:33:30 2023] GET /livingarchive/static/js/leafletscript.js => generated 6448 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 114/114] 138.80.92.158 () {56 vars in 1217 bytes} [Tue Oct 24 02:33:30 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 115/115] 138.80.92.158 () {56 vars in 1182 bytes} [Tue Oct 24 02:33:30 2023] GET /livingarchive/static/assets/img/logos/cdu.png => generated 8575 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 288 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 116/116] 138.80.92.158 () {56 vars in 1217 bytes} [Tue Oct 24 02:33:30 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 117/117] 138.80.92.158 () {56 vars in 1100 bytes} [Tue Oct 24 02:33:30 2023] GET /livingarchive/static/js/scripts.js => generated 1860 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 118/118] 138.80.92.158 () {56 vars in 1170 bytes} [Tue Oct 24 02:33:33 2023] GET /livingarchive/static/assets/favicon.ico => generated 2238 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 119/119] 138.80.92.158 () {60 vars in 1188 bytes} [Tue Oct 24 02:34:19 2023] GET / => generated 12715 bytes in 26 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 120/120] 138.80.92.158 () {58 vars in 1167 bytes} [Tue Oct 24 02:34:19 2023] GET /livingarchive/static/js/leafletscript.js => generated 6450 bytes in 4 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 121/121] 138.80.92.158 () {68 vars in 1550 bytes} [Tue Oct 24 02:34:40 2023] POST /admin/pages/add/blog/blogdetailpage/3/ => generated 0 bytes in 247 msecs (HTTP/1.1 302) 11 headers in 739 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 122/122] 138.80.92.158 () {62 vars in 1657 bytes} [Tue Oct 24 02:34:40 2023] GET /admin/pages/3/ => generated 49963 bytes in 120 msecs (HTTP/1.1 200) 11 headers in 569 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 123/123] 138.80.92.158 () {56 vars in 1173 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/css/core.css?v=2f15d667 => generated 225997 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 290 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 124/124] 138.80.92.158 () {56 vars in 1178 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailvideos/css/summary-override.css => generated 364 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 299 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 125/125] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-3.6.0.min.js?v=2f15d667 => generated 89531 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 126/126] 138.80.92.158 () {56 vars in 1157 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/icons.js?v=2f15d667 => generated 650 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 301 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 127/127] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-ui-1.13.2.min.js?v=2f15d667 => generated 254377 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 128/128] 138.80.92.158 () {56 vars in 1203 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery.datetimepicker.js?v=2f15d667 => generated 61449 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 129/129] 138.80.92.158 () {56 vars in 1191 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery.autosize.js?v=2f15d667 => generated 2990 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 130/130] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-transition.js?v=2f15d667 => generated 876 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 316 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 131/131] 138.80.92.158 () {56 vars in 1191 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-modal.js?v=2f15d667 => generated 3891 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 132/132] 138.80.92.158 () {56 vars in 1173 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/vendor/tag-it.js?v=2f15d667 => generated 8042 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 303 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 133/133] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:34:41 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 134/134] 138.80.92.158 () {56 vars in 1155 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/core.js?v=2f15d667 => generated 54810 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 302 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 135/135] 138.80.92.158 () {56 vars in 1159 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/vendor.js?v=2f15d667 => generated 266499 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 136/136] 138.80.92.158 () {56 vars in 1171 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/wagtailadmin.js?v=2f15d667 => generated 13556 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 137/137] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/telepath/telepath.js?v=2f15d667 => generated 4529 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 138/138] 138.80.92.158 () {56 vars in 1161 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/sidebar.js?v=2f15d667 => generated 44293 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 139/139] 138.80.92.158 () {56 vars in 1175 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/modal-workflow.js?v=2f15d667 => generated 3669 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 311 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 140/140] 138.80.92.158 () {56 vars in 1175 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/privacy-switch.js?v=2f15d667 => generated 2842 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 311 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 141/141] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:34:41 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 142/142] 138.80.92.158 () {56 vars in 1171 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/js/bulk-actions.js?v=2f15d667 => generated 5600 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 309 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 143/143] 138.80.92.158 () {58 vars in 1249 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/fonts/wagtail.woff => generated 24408 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 294 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 144/144] 138.80.92.158 () {56 vars in 1231 bytes} [Tue Oct 24 02:34:41 2023] GET /livingarchive/static/wagtailadmin/images/favicon.ico?v=2f15d667 => generated 2666 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 145/145] 138.80.92.158 () {58 vars in 1174 bytes} [Tue Oct 24 02:34:46 2023] GET /blog/ => generated 13003 bytes in 30 msecs (HTTP/1.1 200) 7 headers in 223 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 146/146] 138.80.92.158 () {60 vars in 1188 bytes} [Tue Oct 24 02:35:14 2023] GET / => generated 13757 bytes in 24 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 147/147] 138.80.92.158 () {58 vars in 1167 bytes} [Tue Oct 24 02:35:14 2023] GET /livingarchive/static/js/leafletscript.js => generated 6434 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 148/148] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:35:16 2023] GET /undefined => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 116 bytes (1 switches on core 0)
+Not Found: /undefined/
+[pid: 2109920|app: 0|req: 149/149] 138.80.92.158 () {56 vars in 1112 bytes} [Tue Oct 24 02:35:16 2023] GET /undefined/ => generated 7004 bytes in 27 msecs (HTTP/1.1 404) 6 headers in 215 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 150/150] 138.80.92.158 () {60 vars in 1254 bytes} [Tue Oct 24 02:35:27 2023] GET /guwak-bird/ => generated 4006 bytes in 27 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 151/151] 138.80.92.158 () {58 vars in 1268 bytes} [Tue Oct 24 02:36:40 2023] GET /admin/pages/3/ => generated 49175 bytes in 126 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 152/152] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:36:41 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 153/153] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:36:41 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 154/154] 138.80.92.158 () {60 vars in 1281 bytes} [Tue Oct 24 02:36:43 2023] GET /admin/pages/74/edit/ => generated 98059 bytes in 156 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 155/155] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/css/panels/draftail.css?v=2f15d667 => generated 23094 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 293 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 156/156] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/css/panels/streamfield.css?v=2f15d667 => generated 1016 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 295 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 157/157] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/vendor/mousetrap.min.js?v=2f15d667 => generated 4630 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 158/158] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:36:44 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 159/159] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/vendor/rangy-core.js?v=2f15d667 => generated 47124 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 160/160] 138.80.92.158 () {56 vars in 1169 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/comments.js?v=2f15d667 => generated 53404 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 306 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 161/161] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/expanding-formset.js?v=2f15d667 => generated 1594 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 162/162] 138.80.92.158 () {56 vars in 1175 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/page-editor.js?v=2f15d667 => generated 8484 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 163/163] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/preview-panel.js?v=2f15d667 => generated 4599 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 164/164] 138.80.92.158 () {56 vars in 1189 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/vendor/xregexp.min.js?v=2f15d667 => generated 62142 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 309 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 165/165] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/vendor/urlify.js?v=2f15d667 => generated 3745 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 303 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 166/166] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/workflow-action.js?v=2f15d667 => generated 3051 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 167/167] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/workflow-status.js?v=2f15d667 => generated 1679 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 168/168] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-tooltip.js?v=2f15d667 => generated 6361 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 169/169] 138.80.92.158 () {56 vars in 1191 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/schedule-publishing.js?v=2f15d667 => generated 278 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 170/170] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/date-time-chooser.js?v=2f15d667 => generated 3298 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 171/171] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailimages/js/image-chooser-modal.js?v=2f15d667 => generated 3586 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 316 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 172/172] 138.80.92.158 () {56 vars in 1169 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/draftail.js?v=2f15d667 => generated 293352 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 173/173] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailembeds/js/embed-chooser-modal.js?v=2f15d667 => generated 358 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 174/174] 138.80.92.158 () {56 vars in 1189 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/page-chooser-modal.js?v=2f15d667 => generated 5275 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 175/175] 138.80.92.158 () {56 vars in 1195 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser-modal.js?v=2f15d667 => generated 2233 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 176/176] 138.80.92.158 () {56 vars in 1185 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/telepath/widgets.js?v=2f15d667 => generated 7180 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 177/177] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailimages/js/image-chooser.js?v=2f15d667 => generated 2179 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 178/178] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailadmin/js/telepath/blocks.js?v=2f15d667 => generated 37276 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 179/179] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser-telepath.js?v=2f15d667 => generated 1840 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 322 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 180/180] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser.js?v=2f15d667 => generated 1733 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 313 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 181/181] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:36:44 2023] GET /livingarchive/static/wagtailvideos/js/video-chooser.js?v=2f15d667 => generated 87 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 182/182] 138.80.92.158 () {56 vars in 1092 bytes} [Tue Oct 24 02:36:44 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 183/183] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:36:44 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 23 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 184/184] 138.80.92.158 () {60 vars in 1252 bytes} [Tue Oct 24 02:36:44 2023] DELETE /admin/pages/74/edit/preview/ => generated 17 bytes in 11 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 185/185] 138.80.92.158 () {62 vars in 1354 bytes} [Tue Oct 24 02:36:44 2023] POST /admin/pages/74/edit/preview/ => generated 40 bytes in 38 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 186/186] 138.80.92.158 () {56 vars in 1128 bytes} [Tue Oct 24 02:36:44 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 187/187] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:36:44 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4036 bytes in 32 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 188/188] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:36:44 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4036 bytes in 31 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 189/189] 138.80.92.158 () {68 vars in 1496 bytes} [Tue Oct 24 02:36:51 2023] POST /admin/pages/74/edit/ => generated 0 bytes in 184 msecs (HTTP/1.1 302) 11 headers in 736 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 190/190] 138.80.92.158 () {62 vars in 1636 bytes} [Tue Oct 24 02:36:51 2023] GET /admin/pages/3/ => generated 49960 bytes in 126 msecs (HTTP/1.1 200) 11 headers in 569 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 191/191] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:36:51 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 192/192] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:36:51 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 193/193] 138.80.92.158 () {58 vars in 1256 bytes} [Tue Oct 24 02:36:55 2023] GET /admin/pages/74/edit/ => generated 98153 bytes in 138 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 194/194] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:36:55 2023] GET /admin/jsi18n/ => generated 3343 bytes in 12 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 195/195] 138.80.92.158 () {56 vars in 1092 bytes} [Tue Oct 24 02:36:55 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 196/196] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:36:55 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4036 bytes in 34 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 197/197] 138.80.92.158 () {60 vars in 1252 bytes} [Tue Oct 24 02:36:55 2023] DELETE /admin/pages/74/edit/preview/ => generated 17 bytes in 26 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 198/198] 138.80.92.158 () {62 vars in 1354 bytes} [Tue Oct 24 02:36:55 2023] POST /admin/pages/74/edit/preview/ => generated 40 bytes in 123 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 199/199] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:36:55 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4130 bytes in 32 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 200/200] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:36:55 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4130 bytes in 32 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 201/201] 138.80.92.158 () {58 vars in 1268 bytes} [Tue Oct 24 02:36:55 2023] GET /admin/pages/3/ => generated 49169 bytes in 123 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 202/202] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:36:55 2023] GET /admin/jsi18n/ => generated 3343 bytes in 8 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 203/203] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:36:56 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 204/204] 138.80.92.158 () {58 vars in 1292 bytes} [Tue Oct 24 02:36:57 2023] GET /admin/pages/add/blog/blogdetailpage/3/ => generated 87487 bytes in 120 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 205/205] 138.80.92.158 () {56 vars in 1096 bytes} [Tue Oct 24 02:36:57 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 206/206] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:36:58 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 207/207] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:36:58 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 23 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 208/208] 138.80.92.158 () {60 vars in 1306 bytes} [Tue Oct 24 02:36:58 2023] DELETE /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 17 bytes in 12 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 209/209] 138.80.92.158 () {62 vars in 1408 bytes} [Tue Oct 24 02:36:58 2023] POST /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 42 bytes in 37 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 210/210] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:36:58 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 211/211] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:36:58 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 23 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 212/212] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:36:58 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 213/213] 138.80.92.158 () {58 vars in 1236 bytes} [Tue Oct 24 02:36:58 2023] GET /admin/pages/3/ => generated 49169 bytes in 123 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 214/214] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:36:59 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 215/215] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:36:59 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 216/216] 138.80.92.158 () {58 vars in 1214 bytes} [Tue Oct 24 02:36:59 2023] GET /admin/ => generated 23009 bytes in 85 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 217/217] 138.80.92.158 () {56 vars in 1064 bytes} [Tue Oct 24 02:36:59 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 218/218] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:36:59 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 219/219] 138.80.92.158 () {58 vars in 1236 bytes} [Tue Oct 24 02:37:03 2023] GET /admin/pages/3/ => generated 49169 bytes in 121 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 220/220] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:37:03 2023] GET /admin/jsi18n/ => generated 3343 bytes in 11 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 221/221] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:37:03 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 222/222] 138.80.92.158 () {58 vars in 1292 bytes} [Tue Oct 24 02:37:04 2023] GET /admin/pages/add/blog/blogdetailpage/3/ => generated 87487 bytes in 117 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 223/223] 138.80.92.158 () {56 vars in 1096 bytes} [Tue Oct 24 02:37:04 2023] GET /admin/jsi18n/ => generated 3343 bytes in 13 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 224/224] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:37:04 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 3 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 225/225] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:37:04 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 26 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 226/226] 138.80.92.158 () {60 vars in 1306 bytes} [Tue Oct 24 02:37:04 2023] DELETE /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 17 bytes in 16 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 227/227] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:37:04 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 3 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 228/228] 138.80.92.158 () {62 vars in 1408 bytes} [Tue Oct 24 02:37:04 2023] POST /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 42 bytes in 34 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 229/229] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:37:04 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 21 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 230/230] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:37:04 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 231/231] 138.80.92.158 () {58 vars in 1236 bytes} [Tue Oct 24 02:37:06 2023] GET /admin/pages/3/ => generated 49169 bytes in 125 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 232/232] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:37:06 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 233/233] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:37:06 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 3 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 234/234] 138.80.92.158 () {60 vars in 1188 bytes} [Tue Oct 24 02:37:10 2023] GET / => generated 13757 bytes in 27 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 235/235] 138.80.92.158 () {58 vars in 1167 bytes} [Tue Oct 24 02:37:10 2023] GET /livingarchive/static/js/leafletscript.js => generated 6444 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+Not Found: /undefined/
+[pid: 2109920|app: 0|req: 236/236] 138.80.92.158 () {56 vars in 1112 bytes} [Tue Oct 24 02:37:13 2023] GET /undefined/ => generated 7004 bytes in 25 msecs (HTTP/1.1 404) 6 headers in 215 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 237/237] 138.80.92.158 () {60 vars in 1281 bytes} [Tue Oct 24 02:39:10 2023] GET /admin/pages/72/edit/ => generated 97968 bytes in 142 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 238/238] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/css/core.css?v=2f15d667 => generated 225997 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 290 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 239/239] 138.80.92.158 () {56 vars in 1184 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailvideos/css/summary-override.css => generated 364 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 299 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 240/240] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/css/panels/draftail.css?v=2f15d667 => generated 23094 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 293 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 241/241] 138.80.92.158 () {56 vars in 1163 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/icons.js?v=2f15d667 => generated 650 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 301 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 242/242] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/css/panels/streamfield.css?v=2f15d667 => generated 1016 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 295 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 243/243] 138.80.92.158 () {56 vars in 1199 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-3.6.0.min.js?v=2f15d667 => generated 89531 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 244/244] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-ui-1.13.2.min.js?v=2f15d667 => generated 254377 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 245/245] 138.80.92.158 () {56 vars in 1209 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery.datetimepicker.js?v=2f15d667 => generated 61449 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 246/246] 138.80.92.158 () {56 vars in 1197 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery.autosize.js?v=2f15d667 => generated 2990 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 247/247] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-transition.js?v=2f15d667 => generated 876 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 316 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 248/248] 138.80.92.158 () {56 vars in 1197 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-modal.js?v=2f15d667 => generated 3891 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 249/249] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/tag-it.js?v=2f15d667 => generated 8042 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 303 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 250/250] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:39:10 2023] GET /admin/jsi18n/ => generated 3343 bytes in 8 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 251/251] 138.80.92.158 () {56 vars in 1161 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/core.js?v=2f15d667 => generated 54810 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 302 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 252/252] 138.80.92.158 () {56 vars in 1165 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor.js?v=2f15d667 => generated 266499 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 253/253] 138.80.92.158 () {56 vars in 1177 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/wagtailadmin.js?v=2f15d667 => generated 13556 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 254/254] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/telepath/telepath.js?v=2f15d667 => generated 4529 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 255/255] 138.80.92.158 () {56 vars in 1167 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/sidebar.js?v=2f15d667 => generated 44293 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 256/256] 138.80.92.158 () {56 vars in 1169 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/comments.js?v=2f15d667 => generated 53404 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 306 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 257/257] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/rangy-core.js?v=2f15d667 => generated 47124 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 258/258] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/mousetrap.min.js?v=2f15d667 => generated 4630 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 259/259] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/expanding-formset.js?v=2f15d667 => generated 1594 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 260/260] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/modal-workflow.js?v=2f15d667 => generated 3669 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 311 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 261/261] 138.80.92.158 () {56 vars in 1175 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/page-editor.js?v=2f15d667 => generated 8484 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 262/262] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/preview-panel.js?v=2f15d667 => generated 4599 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 263/263] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/privacy-switch.js?v=2f15d667 => generated 2842 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 311 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 264/264] 138.80.92.158 () {56 vars in 1189 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/xregexp.min.js?v=2f15d667 => generated 62142 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 309 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 265/265] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/urlify.js?v=2f15d667 => generated 3745 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 303 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 266/266] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/workflow-action.js?v=2f15d667 => generated 3051 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 267/267] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/workflow-status.js?v=2f15d667 => generated 1679 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 268/268] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-tooltip.js?v=2f15d667 => generated 6361 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 269/269] 138.80.92.158 () {56 vars in 1191 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/schedule-publishing.js?v=2f15d667 => generated 278 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 270/270] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/date-time-chooser.js?v=2f15d667 => generated 3298 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 271/271] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailimages/js/image-chooser-modal.js?v=2f15d667 => generated 3586 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 316 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 272/272] 138.80.92.158 () {56 vars in 1169 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/draftail.js?v=2f15d667 => generated 293352 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 273/273] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailembeds/js/embed-chooser-modal.js?v=2f15d667 => generated 358 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 274/274] 138.80.92.158 () {56 vars in 1189 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/page-chooser-modal.js?v=2f15d667 => generated 5275 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 275/275] 138.80.92.158 () {56 vars in 1195 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser-modal.js?v=2f15d667 => generated 2233 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 276/276] 138.80.92.158 () {56 vars in 1185 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/telepath/widgets.js?v=2f15d667 => generated 7180 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 277/277] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailimages/js/image-chooser.js?v=2f15d667 => generated 2179 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 278/278] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/js/telepath/blocks.js?v=2f15d667 => generated 37276 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 279/279] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser-telepath.js?v=2f15d667 => generated 1840 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 322 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 280/280] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser.js?v=2f15d667 => generated 1733 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 313 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 281/281] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailvideos/js/video-chooser.js?v=2f15d667 => generated 87 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 282/282] 138.80.92.158 () {56 vars in 1092 bytes} [Tue Oct 24 02:39:10 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 283/283] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:39:10 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 23 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 284/284] 138.80.92.158 () {60 vars in 1252 bytes} [Tue Oct 24 02:39:10 2023] DELETE /admin/pages/72/edit/preview/ => generated 17 bytes in 11 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 285/285] 138.80.92.158 () {58 vars in 1249 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/fonts/wagtail.woff => generated 24408 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 294 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 286/286] 138.80.92.158 () {56 vars in 1128 bytes} [Tue Oct 24 02:39:10 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 287/287] 138.80.92.158 () {62 vars in 1354 bytes} [Tue Oct 24 02:39:10 2023] POST /admin/pages/72/edit/preview/ => generated 40 bytes in 37 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 288/288] 138.80.92.158 () {56 vars in 1237 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/wagtailadmin/images/favicon.ico?v=2f15d667 => generated 2666 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 289/289] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:39:10 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 4050 bytes in 34 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 290/290] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:39:10 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 4050 bytes in 33 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 291/291] 138.80.92.158 () {56 vars in 1172 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 292/292] 138.80.92.158 () {56 vars in 1156 bytes} [Tue Oct 24 02:39:10 2023] GET /livingarchive/static/js/scripts.js => generated 1860 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 293/293] 138.80.92.158 () {60 vars in 1188 bytes} [Tue Oct 24 02:39:18 2023] GET / => generated 13757 bytes in 28 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 294/294] 138.80.92.158 () {56 vars in 1122 bytes} [Tue Oct 24 02:39:18 2023] GET /livingarchive/static/css/home_page.css => generated 772 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 295/295] 138.80.92.158 () {56 vars in 1112 bytes} [Tue Oct 24 02:39:18 2023] GET /livingarchive/static/js/leafletscript.js => generated 6444 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 296/296] 138.80.92.158 () {56 vars in 1217 bytes} [Tue Oct 24 02:39:18 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 297/297] 138.80.92.158 () {56 vars in 1182 bytes} [Tue Oct 24 02:39:18 2023] GET /livingarchive/static/assets/img/logos/cdu.png => generated 8575 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 288 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 298/298] 138.80.92.158 () {56 vars in 1217 bytes} [Tue Oct 24 02:39:18 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 299/299] 138.80.92.158 () {56 vars in 1170 bytes} [Tue Oct 24 02:39:21 2023] GET /livingarchive/static/assets/favicon.ico => generated 2238 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 300/300] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:39:21 2023] GET /undefined => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 116 bytes (1 switches on core 0)
+Not Found: /undefined/
+[pid: 2109920|app: 0|req: 301/301] 138.80.92.158 () {56 vars in 1112 bytes} [Tue Oct 24 02:39:21 2023] GET /undefined/ => generated 7004 bytes in 25 msecs (HTTP/1.1 404) 6 headers in 215 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 302/302] 138.80.92.158 () {60 vars in 1257 bytes} [Tue Oct 24 02:39:33 2023] GET /blog/guwak-bird => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 122 bytes (1 switches on core 0)
+Not Found: /blog/guwak-bird/
+[pid: 2109920|app: 0|req: 303/303] 138.80.92.158 () {60 vars in 1259 bytes} [Tue Oct 24 02:39:33 2023] GET /blog/guwak-bird/ => generated 7022 bytes in 28 msecs (HTTP/1.1 404) 6 headers in 215 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 304/304] 138.80.92.158 () {62 vars in 1219 bytes} [Tue Oct 24 02:39:45 2023] GET / => generated 13757 bytes in 27 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 305/305] 138.80.92.158 () {62 vars in 1229 bytes} [Tue Oct 24 02:39:46 2023] GET /livingarchive/static/js/leafletscript.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 5 headers in 175 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 306/306] 138.80.92.158 () {60 vars in 1249 bytes} [Tue Oct 24 02:39:52 2023] GET /guwak-bird/ => generated 4130 bytes in 24 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 307/307] 138.80.92.158 () {58 vars in 1236 bytes} [Tue Oct 24 02:39:59 2023] GET /admin/pages/3/ => generated 49175 bytes in 118 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 308/308] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:39:59 2023] GET /admin/jsi18n/ => generated 3343 bytes in 13 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 309/309] 138.80.92.158 () {56 vars in 1171 bytes} [Tue Oct 24 02:39:59 2023] GET /livingarchive/static/wagtailadmin/js/bulk-actions.js?v=2f15d667 => generated 5600 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 309 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 310/310] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:39:59 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 311/311] 138.80.92.158 () {60 vars in 1281 bytes} [Tue Oct 24 02:40:01 2023] GET /admin/pages/74/edit/ => generated 98153 bytes in 141 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 312/312] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:40:01 2023] GET /admin/jsi18n/ => generated 3343 bytes in 8 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 313/313] 138.80.92.158 () {56 vars in 1092 bytes} [Tue Oct 24 02:40:02 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 314/314] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:40:02 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4130 bytes in 35 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 315/315] 138.80.92.158 () {60 vars in 1252 bytes} [Tue Oct 24 02:40:02 2023] DELETE /admin/pages/74/edit/preview/ => generated 17 bytes in 23 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 316/316] 138.80.92.158 () {62 vars in 1354 bytes} [Tue Oct 24 02:40:02 2023] POST /admin/pages/74/edit/preview/ => generated 40 bytes in 35 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 317/317] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:40:02 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4130 bytes in 33 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 318/318] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:40:02 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4130 bytes in 30 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 319/319] 138.80.92.158 () {58 vars in 1236 bytes} [Tue Oct 24 02:40:09 2023] GET /admin/pages/3/ => generated 49175 bytes in 121 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 320/320] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:40:09 2023] GET /admin/jsi18n/ => generated 3343 bytes in 8 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 321/321] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:40:10 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 322/322] 138.80.92.158 () {58 vars in 1157 bytes} [Tue Oct 24 02:40:38 2023] GET / => generated 13757 bytes in 23 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 323/323] 138.80.92.158 () {56 vars in 1116 bytes} [Tue Oct 24 02:40:39 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 324/324] 138.80.92.158 () {56 vars in 1122 bytes} [Tue Oct 24 02:40:39 2023] GET /livingarchive/static/css/home_page.css => generated 772 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 325/325] 138.80.92.158 () {56 vars in 1112 bytes} [Tue Oct 24 02:40:39 2023] GET /livingarchive/static/js/leafletscript.js => generated 6444 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 326/326] 138.80.92.158 () {56 vars in 1217 bytes} [Tue Oct 24 02:40:39 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 327/327] 138.80.92.158 () {56 vars in 1182 bytes} [Tue Oct 24 02:40:39 2023] GET /livingarchive/static/assets/img/logos/cdu.png => generated 8575 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 288 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 328/328] 138.80.92.158 () {56 vars in 1217 bytes} [Tue Oct 24 02:40:39 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 329/329] 138.80.92.158 () {56 vars in 1100 bytes} [Tue Oct 24 02:40:39 2023] GET /livingarchive/static/js/scripts.js => generated 1860 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 330/330] 138.80.92.158 () {56 vars in 1170 bytes} [Tue Oct 24 02:40:41 2023] GET /livingarchive/static/assets/favicon.ico => generated 2238 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 331/331] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:40:43 2023] GET /undefined => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 116 bytes (1 switches on core 0)
+Not Found: /undefined/
+[pid: 2109920|app: 0|req: 332/332] 138.80.92.158 () {56 vars in 1112 bytes} [Tue Oct 24 02:40:43 2023] GET /undefined/ => generated 7004 bytes in 25 msecs (HTTP/1.1 404) 6 headers in 215 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 333/333] 138.80.92.158 () {60 vars in 1188 bytes} [Tue Oct 24 02:43:37 2023] GET / => generated 13757 bytes in 27 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 334/334] 138.80.92.158 () {56 vars in 1116 bytes} [Tue Oct 24 02:43:37 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 335/335] 138.80.92.158 () {56 vars in 1122 bytes} [Tue Oct 24 02:43:37 2023] GET /livingarchive/static/css/home_page.css => generated 772 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 336/336] 138.80.92.158 () {56 vars in 1112 bytes} [Tue Oct 24 02:43:38 2023] GET /livingarchive/static/js/leafletscript.js => generated 5216 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 337/337] 138.80.92.158 () {56 vars in 1217 bytes} [Tue Oct 24 02:43:38 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 338/338] 138.80.92.158 () {56 vars in 1182 bytes} [Tue Oct 24 02:43:38 2023] GET /livingarchive/static/assets/img/logos/cdu.png => generated 8575 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 288 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 339/339] 138.80.92.158 () {56 vars in 1217 bytes} [Tue Oct 24 02:43:38 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 340/340] 138.80.92.158 () {56 vars in 1100 bytes} [Tue Oct 24 02:43:38 2023] GET /livingarchive/static/js/scripts.js => generated 1860 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 341/341] 138.80.92.158 () {56 vars in 1170 bytes} [Tue Oct 24 02:43:38 2023] GET /livingarchive/static/assets/favicon.ico => generated 2238 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 342/342] 138.80.92.158 () {60 vars in 1247 bytes} [Tue Oct 24 02:43:43 2023] GET /guwak-bird => generated 0 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 117 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 343/343] 138.80.92.158 () {60 vars in 1249 bytes} [Tue Oct 24 02:43:43 2023] GET /guwak-bird/ => generated 4130 bytes in 25 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 344/344] 138.80.92.158 () {60 vars in 1281 bytes} [Tue Oct 24 02:44:49 2023] GET /admin/pages/74/edit/ => generated 98153 bytes in 151 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 345/345] 138.80.92.158 () {60 vars in 1281 bytes} [Tue Oct 24 02:44:49 2023] GET /admin/pages/74/edit/ => generated 98153 bytes in 140 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 346/346] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/css/core.css?v=2f15d667 => generated 225997 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 290 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 347/347] 138.80.92.158 () {56 vars in 1184 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailvideos/css/summary-override.css => generated 364 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 299 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 348/348] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/css/panels/draftail.css?v=2f15d667 => generated 23094 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 293 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 349/349] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/css/panels/streamfield.css?v=2f15d667 => generated 1016 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 295 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 350/350] 138.80.92.158 () {56 vars in 1163 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/icons.js?v=2f15d667 => generated 650 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 301 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 351/351] 138.80.92.158 () {56 vars in 1199 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-3.6.0.min.js?v=2f15d667 => generated 89531 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 352/352] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-ui-1.13.2.min.js?v=2f15d667 => generated 254377 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 353/353] 138.80.92.158 () {56 vars in 1209 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery.datetimepicker.js?v=2f15d667 => generated 61449 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 354/354] 138.80.92.158 () {56 vars in 1197 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery.autosize.js?v=2f15d667 => generated 2990 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 355/355] 138.80.92.158 () {56 vars in 1207 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-transition.js?v=2f15d667 => generated 876 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 316 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 356/356] 138.80.92.158 () {56 vars in 1197 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-modal.js?v=2f15d667 => generated 3891 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 357/357] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/tag-it.js?v=2f15d667 => generated 8042 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 303 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 358/358] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:44:49 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 359/359] 138.80.92.158 () {56 vars in 1161 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/core.js?v=2f15d667 => generated 54810 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 302 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 360/360] 138.80.92.158 () {56 vars in 1165 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor.js?v=2f15d667 => generated 266499 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 361/361] 138.80.92.158 () {56 vars in 1177 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/wagtailadmin.js?v=2f15d667 => generated 13556 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 362/362] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/telepath/telepath.js?v=2f15d667 => generated 4529 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 363/363] 138.80.92.158 () {56 vars in 1167 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/sidebar.js?v=2f15d667 => generated 44293 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 364/364] 138.80.92.158 () {56 vars in 1169 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/comments.js?v=2f15d667 => generated 53404 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 306 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 365/365] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/rangy-core.js?v=2f15d667 => generated 47124 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 366/366] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/mousetrap.min.js?v=2f15d667 => generated 4630 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 367/367] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/expanding-formset.js?v=2f15d667 => generated 1594 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 368/368] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/modal-workflow.js?v=2f15d667 => generated 3669 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 311 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 369/369] 138.80.92.158 () {56 vars in 1175 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/page-editor.js?v=2f15d667 => generated 8484 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 370/370] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/preview-panel.js?v=2f15d667 => generated 4599 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 371/371] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/privacy-switch.js?v=2f15d667 => generated 2842 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 311 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 372/372] 138.80.92.158 () {56 vars in 1189 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/xregexp.min.js?v=2f15d667 => generated 62142 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 309 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 373/373] 138.80.92.158 () {56 vars in 1179 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/urlify.js?v=2f15d667 => generated 3745 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 303 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 374/374] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/workflow-action.js?v=2f15d667 => generated 3051 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 375/375] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/workflow-status.js?v=2f15d667 => generated 1679 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 312 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 376/376] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/vendor/bootstrap-tooltip.js?v=2f15d667 => generated 6361 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 377/377] 138.80.92.158 () {56 vars in 1191 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/schedule-publishing.js?v=2f15d667 => generated 278 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 378/378] 138.80.92.158 () {56 vars in 1187 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/date-time-chooser.js?v=2f15d667 => generated 3298 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 314 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 379/379] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailimages/js/image-chooser-modal.js?v=2f15d667 => generated 3586 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 316 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 380/380] 138.80.92.158 () {56 vars in 1169 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/draftail.js?v=2f15d667 => generated 293352 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 381/381] 138.80.92.158 () {56 vars in 1193 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailembeds/js/embed-chooser-modal.js?v=2f15d667 => generated 358 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 382/382] 138.80.92.158 () {56 vars in 1189 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/page-chooser-modal.js?v=2f15d667 => generated 5275 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 315 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 383/383] 138.80.92.158 () {56 vars in 1195 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser-modal.js?v=2f15d667 => generated 2233 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 384/384] 138.80.92.158 () {56 vars in 1185 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/telepath/widgets.js?v=2f15d667 => generated 7180 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 385/385] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailimages/js/image-chooser.js?v=2f15d667 => generated 2179 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 386/386] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailadmin/js/telepath/blocks.js?v=2f15d667 => generated 37276 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 387/387] 138.80.92.158 () {56 vars in 1201 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser-telepath.js?v=2f15d667 => generated 1840 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 322 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 388/388] 138.80.92.158 () {56 vars in 1183 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtaildocs/js/document-chooser.js?v=2f15d667 => generated 1733 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 313 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 389/389] 138.80.92.158 () {56 vars in 1181 bytes} [Tue Oct 24 02:44:49 2023] GET /livingarchive/static/wagtailvideos/js/video-chooser.js?v=2f15d667 => generated 87 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 308 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 390/390] 138.80.92.158 () {56 vars in 1092 bytes} [Tue Oct 24 02:44:49 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 3 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 391/391] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:44:49 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4130 bytes in 32 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 392/392] 138.80.92.158 () {60 vars in 1252 bytes} [Tue Oct 24 02:44:50 2023] DELETE /admin/pages/74/edit/preview/ => generated 17 bytes in 23 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 393/393] 138.80.92.158 () {58 vars in 1249 bytes} [Tue Oct 24 02:44:50 2023] GET /livingarchive/static/wagtailadmin/fonts/wagtail.woff => generated 24408 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 294 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 394/394] 138.80.92.158 () {62 vars in 1354 bytes} [Tue Oct 24 02:44:50 2023] POST /admin/pages/74/edit/preview/ => generated 40 bytes in 35 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 395/395] 138.80.92.158 () {56 vars in 1237 bytes} [Tue Oct 24 02:44:50 2023] GET /livingarchive/static/wagtailadmin/images/favicon.ico?v=2f15d667 => generated 2666 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 396/396] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:44:50 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4130 bytes in 33 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 397/397] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:44:50 2023] GET /admin/pages/74/edit/preview/?in_preview_panel=true&mode= => generated 4130 bytes in 32 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 398/398] 138.80.92.158 () {68 vars in 1496 bytes} [Tue Oct 24 02:47:21 2023] POST /admin/pages/74/edit/ => generated 0 bytes in 191 msecs (HTTP/1.1 302) 11 headers in 736 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 399/399] 138.80.92.158 () {62 vars in 1636 bytes} [Tue Oct 24 02:47:21 2023] GET /admin/pages/3/ => generated 49960 bytes in 116 msecs (HTTP/1.1 200) 11 headers in 569 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 400/400] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:47:21 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 401/401] 138.80.92.158 () {56 vars in 1171 bytes} [Tue Oct 24 02:47:21 2023] GET /livingarchive/static/wagtailadmin/js/bulk-actions.js?v=2f15d667 => generated 5600 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 309 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 402/402] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:47:21 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 403/403] 138.80.92.158 () {60 vars in 1281 bytes} [Tue Oct 24 02:47:25 2023] GET /admin/pages/72/edit/ => generated 97968 bytes in 140 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 404/404] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:47:25 2023] GET /admin/jsi18n/ => generated 3343 bytes in 15 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 405/405] 138.80.92.158 () {56 vars in 1092 bytes} [Tue Oct 24 02:47:25 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 406/406] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:47:25 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 4050 bytes in 35 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 407/407] 138.80.92.158 () {60 vars in 1252 bytes} [Tue Oct 24 02:47:26 2023] DELETE /admin/pages/72/edit/preview/ => generated 17 bytes in 22 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 408/408] 138.80.92.158 () {62 vars in 1354 bytes} [Tue Oct 24 02:47:26 2023] POST /admin/pages/72/edit/preview/ => generated 40 bytes in 35 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 409/409] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:47:26 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 4050 bytes in 30 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 410/410] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:47:26 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 4050 bytes in 31 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 411/411] 138.80.92.158 () {68 vars in 1496 bytes} [Tue Oct 24 02:48:21 2023] POST /admin/pages/72/edit/ => generated 0 bytes in 191 msecs (HTTP/1.1 302) 11 headers in 721 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 412/412] 138.80.92.158 () {62 vars in 1621 bytes} [Tue Oct 24 02:48:21 2023] GET /admin/pages/3/ => generated 49948 bytes in 123 msecs (HTTP/1.1 200) 11 headers in 569 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 413/413] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:48:21 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 414/414] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:48:21 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 415/415] 138.80.92.158 () {60 vars in 1281 bytes} [Tue Oct 24 02:50:17 2023] GET /admin/pages/72/edit/ => generated 98122 bytes in 145 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 416/416] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:50:17 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 417/417] 138.80.92.158 () {56 vars in 1092 bytes} [Tue Oct 24 02:50:17 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 418/418] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:50:17 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 4050 bytes in 30 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 419/419] 138.80.92.158 () {60 vars in 1252 bytes} [Tue Oct 24 02:50:17 2023] DELETE /admin/pages/72/edit/preview/ => generated 17 bytes in 24 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 420/420] 138.80.92.158 () {62 vars in 1354 bytes} [Tue Oct 24 02:50:17 2023] POST /admin/pages/72/edit/preview/ => generated 40 bytes in 36 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 421/421] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:50:17 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 4129 bytes in 33 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 422/422] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:50:17 2023] GET /admin/pages/72/edit/preview/?in_preview_panel=true&mode= => generated 4129 bytes in 28 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 423/423] 138.80.92.158 () {60 vars in 1277 bytes} [Tue Oct 24 02:52:23 2023] GET /admin/pages/72/ => generated 35845 bytes in 91 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 424/424] 138.80.92.158 () {56 vars in 1073 bytes} [Tue Oct 24 02:52:24 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 425/425] 138.80.92.158 () {56 vars in 1087 bytes} [Tue Oct 24 02:52:24 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 2 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 426/426] 138.80.92.158 () {60 vars in 1270 bytes} [Tue Oct 24 02:52:25 2023] GET /admin/pages/3/ => generated 49177 bytes in 120 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 427/427] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:52:25 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 428/428] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:52:25 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 429/429] 138.80.92.158 () {60 vars in 1293 bytes} [Tue Oct 24 02:52:28 2023] GET /admin/pages/3/add_subpage/ => generated 0 bytes in 16 msecs (HTTP/1.1 302) 10 headers in 385 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 430/430] 138.80.92.158 () {60 vars in 1317 bytes} [Tue Oct 24 02:52:28 2023] GET /admin/pages/add/blog/blogdetailpage/3/ => generated 87487 bytes in 118 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 431/431] 138.80.92.158 () {56 vars in 1096 bytes} [Tue Oct 24 02:52:29 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 432/432] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:52:29 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 433/433] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:52:29 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 23 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 434/434] 138.80.92.158 () {60 vars in 1306 bytes} [Tue Oct 24 02:52:29 2023] DELETE /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 17 bytes in 16 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 435/435] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:52:29 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 436/436] 138.80.92.158 () {62 vars in 1408 bytes} [Tue Oct 24 02:52:29 2023] POST /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 42 bytes in 31 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 437/437] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:52:29 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 21 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 438/438] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:52:29 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 439/439] 138.80.92.158 () {68 vars in 1552 bytes} [Tue Oct 24 02:52:58 2023] POST /admin/pages/add/blog/blogdetailpage/3/ => generated 0 bytes in 238 msecs (HTTP/1.1 302) 11 headers in 736 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 440/440] 138.80.92.158 () {62 vars in 1654 bytes} [Tue Oct 24 02:52:59 2023] GET /admin/pages/3/ => generated 54220 bytes in 124 msecs (HTTP/1.1 200) 11 headers in 569 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 441/441] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:52:59 2023] GET /admin/jsi18n/ => generated 3343 bytes in 15 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 442/442] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:52:59 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 443/443] 138.80.92.158 () {60 vars in 1281 bytes} [Tue Oct 24 02:53:12 2023] GET /admin/pages/75/edit/ => generated 98617 bytes in 141 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 444/444] 138.80.92.158 () {56 vars in 1078 bytes} [Tue Oct 24 02:53:12 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 445/445] 138.80.92.158 () {56 vars in 1092 bytes} [Tue Oct 24 02:53:12 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 446/446] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:53:12 2023] GET /admin/pages/75/edit/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 21 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 447/447] 138.80.92.158 () {60 vars in 1252 bytes} [Tue Oct 24 02:53:12 2023] DELETE /admin/pages/75/edit/preview/ => generated 17 bytes in 11 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 448/448] 138.80.92.158 () {56 vars in 1128 bytes} [Tue Oct 24 02:53:12 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 449/449] 138.80.92.158 () {62 vars in 1354 bytes} [Tue Oct 24 02:53:12 2023] POST /admin/pages/75/edit/preview/ => generated 40 bytes in 35 msecs (HTTP/1.1 200) 10 headers in 469 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 450/450] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:53:12 2023] GET /admin/pages/75/edit/preview/?in_preview_panel=true&mode= => generated 4230 bytes in 34 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 451/451] 138.80.92.158 () {58 vars in 1331 bytes} [Tue Oct 24 02:53:12 2023] GET /admin/pages/75/edit/preview/?in_preview_panel=true&mode= => generated 4230 bytes in 31 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 452/452] 138.80.92.158 () {62 vars in 1219 bytes} [Tue Oct 24 02:53:19 2023] GET / => generated 14963 bytes in 24 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 453/453] 138.80.92.158 () {58 vars in 1167 bytes} [Tue Oct 24 02:53:19 2023] GET /livingarchive/static/js/leafletscript.js => generated 5409 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 454/454] 138.80.92.158 () {60 vars in 1257 bytes} [Tue Oct 24 02:53:24 2023] GET /possum-strings/ => generated 4231 bytes in 23 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 455/455] 138.80.92.158 () {60 vars in 1275 bytes} [Tue Oct 24 02:54:00 2023] GET /admin/pages/3/ => generated 53423 bytes in 129 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 456/456] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:54:01 2023] GET /admin/jsi18n/ => generated 3343 bytes in 12 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 457/457] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:54:01 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 458/458] 138.80.92.158 () {60 vars in 1293 bytes} [Tue Oct 24 02:54:04 2023] GET /admin/pages/3/add_subpage/ => generated 0 bytes in 12 msecs (HTTP/1.1 302) 10 headers in 385 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 459/459] 138.80.92.158 () {60 vars in 1317 bytes} [Tue Oct 24 02:54:04 2023] GET /admin/pages/add/blog/blogdetailpage/3/ => generated 87487 bytes in 112 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 460/460] 138.80.92.158 () {56 vars in 1096 bytes} [Tue Oct 24 02:54:04 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 461/461] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:54:04 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 462/462] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:54:04 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 21 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 463/463] 138.80.92.158 () {60 vars in 1306 bytes} [Tue Oct 24 02:54:04 2023] DELETE /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 17 bytes in 12 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 464/464] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:54:04 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 465/465] 138.80.92.158 () {62 vars in 1408 bytes} [Tue Oct 24 02:54:04 2023] POST /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 42 bytes in 31 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 466/466] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:54:04 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 20 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 467/467] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:54:04 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 468/468] 138.80.92.158 () {68 vars in 1552 bytes} [Tue Oct 24 02:54:58 2023] POST /admin/pages/add/blog/blogdetailpage/3/ => generated 0 bytes in 213 msecs (HTTP/1.1 302) 11 headers in 739 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 469/469] 138.80.92.158 () {62 vars in 1657 bytes} [Tue Oct 24 02:54:58 2023] GET /admin/pages/3/ => generated 58427 bytes in 133 msecs (HTTP/1.1 200) 11 headers in 569 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 470/470] 138.80.92.158 () {56 vars in 1072 bytes} [Tue Oct 24 02:54:58 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 471/471] 138.80.92.158 () {56 vars in 1086 bytes} [Tue Oct 24 02:54:58 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 472/472] 138.80.92.158 () {60 vars in 1293 bytes} [Tue Oct 24 02:55:38 2023] GET /admin/pages/3/add_subpage/ => generated 0 bytes in 13 msecs (HTTP/1.1 302) 10 headers in 385 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 473/473] 138.80.92.158 () {60 vars in 1317 bytes} [Tue Oct 24 02:55:38 2023] GET /admin/pages/add/blog/blogdetailpage/3/ => generated 87487 bytes in 113 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 474/474] 138.80.92.158 () {56 vars in 1096 bytes} [Tue Oct 24 02:55:38 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 475/475] 138.80.92.158 () {56 vars in 1110 bytes} [Tue Oct 24 02:55:38 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 476/476] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:55:38 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 24 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 477/477] 138.80.92.158 () {60 vars in 1306 bytes} [Tue Oct 24 02:55:38 2023] DELETE /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 17 bytes in 16 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 478/478] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:55:38 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 479/479] 138.80.92.158 () {62 vars in 1408 bytes} [Tue Oct 24 02:55:38 2023] POST /admin/pages/add/blog/blogdetailpage/3/preview/ => generated 42 bytes in 34 msecs (HTTP/1.1 200) 9 headers in 324 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 480/480] 138.80.92.158 () {58 vars in 1385 bytes} [Tue Oct 24 02:55:38 2023] GET /admin/pages/add/blog/blogdetailpage/3/preview/?in_preview_panel=true&mode= => generated 1751 bytes in 24 msecs (HTTP/1.1 200) 9 headers in 340 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 481/481] 138.80.92.158 () {56 vars in 1146 bytes} [Tue Oct 24 02:55:38 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 482/482] 138.80.97.82 () {68 vars in 1551 bytes} [Tue Oct 24 02:59:26 2023] POST /admin/pages/add/blog/blogdetailpage/3/ => generated 0 bytes in 219 msecs (HTTP/1.1 302) 11 headers in 729 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 483/483] 138.80.97.82 () {62 vars in 1646 bytes} [Tue Oct 24 02:59:26 2023] GET /admin/pages/3/ => generated 62592 bytes in 141 msecs (HTTP/1.1 200) 11 headers in 569 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 484/484] 138.80.97.82 () {56 vars in 1071 bytes} [Tue Oct 24 02:59:26 2023] GET /admin/jsi18n/ => generated 3343 bytes in 9 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 485/485] 138.80.97.82 () {56 vars in 1085 bytes} [Tue Oct 24 02:59:26 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 486/486] 138.80.92.158 () {56 vars in 1117 bytes} [Tue Oct 24 04:35:04 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 487/487] 138.80.92.158 () {58 vars in 1168 bytes} [Tue Oct 24 04:35:04 2023] GET /livingarchive/static/js/leafletscript.js => generated 5586 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 488/488] 138.80.92.158 () {56 vars in 1218 bytes} [Tue Oct 24 04:35:04 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 489/489] 138.80.92.158 () {56 vars in 1218 bytes} [Tue Oct 24 04:35:05 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 490/490] 138.80.92.158 () {60 vars in 1294 bytes} [Tue Oct 24 04:35:10 2023] GET /admin/pages/3/ => generated 61793 bytes in 152 msecs (HTTP/1.1 200) 10 headers in 471 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 491/491] 138.80.92.158 () {56 vars in 1174 bytes} [Tue Oct 24 04:35:10 2023] GET /livingarchive/static/wagtailadmin/css/core.css?v=2f15d667 => generated 225997 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 290 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 492/492] 138.80.92.158 () {56 vars in 1202 bytes} [Tue Oct 24 04:35:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor/jquery-ui-1.13.2.min.js?v=2f15d667 => generated 254377 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 319 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 493/493] 138.80.92.158 () {56 vars in 1087 bytes} [Tue Oct 24 04:35:10 2023] GET /admin/sprite-334b7e20/ => generated 108109 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 322 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 494/494] 138.80.92.158 () {56 vars in 1073 bytes} [Tue Oct 24 04:35:10 2023] GET /admin/jsi18n/ => generated 3343 bytes in 10 msecs (HTTP/1.1 200) 9 headers in 342 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 495/495] 138.80.92.158 () {56 vars in 1160 bytes} [Tue Oct 24 04:35:10 2023] GET /livingarchive/static/wagtailadmin/js/vendor.js?v=2f15d667 => generated 266499 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 305 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 496/496] 1.121.138.128 () {60 vars in 1189 bytes} [Tue Oct 24 10:06:00 2023] GET / => generated 17262 bytes in 50 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 497/497] 1.121.138.128 () {58 vars in 1168 bytes} [Tue Oct 24 10:06:01 2023] GET /livingarchive/static/js/leafletscript.js => generated 0 bytes in 1 msecs (HTTP/1.1 304) 5 headers in 175 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 498/498] 1.121.138.128 () {60 vars in 1189 bytes} [Tue Oct 24 10:06:36 2023] GET / => generated 17262 bytes in 27 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 499/499] 1.121.138.128 () {60 vars in 1189 bytes} [Tue Oct 24 10:07:01 2023] GET / => generated 17262 bytes in 27 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 500/500] 1.121.138.128 () {60 vars in 1189 bytes} [Tue Oct 24 10:07:21 2023] GET / => generated 17262 bytes in 30 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 501/501] 1.121.138.128 () {56 vars in 1117 bytes} [Tue Oct 24 10:07:24 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 502/502] 1.121.138.128 () {56 vars in 1123 bytes} [Tue Oct 24 10:07:24 2023] GET /livingarchive/static/css/home_page.css => generated 772 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 503/503] 1.121.138.128 () {56 vars in 1113 bytes} [Tue Oct 24 10:07:24 2023] GET /livingarchive/static/js/leafletscript.js => generated 5586 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 504/504] 1.121.138.128 () {56 vars in 1218 bytes} [Tue Oct 24 10:07:24 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 505/505] 1.121.138.128 () {56 vars in 1183 bytes} [Tue Oct 24 10:07:24 2023] GET /livingarchive/static/assets/img/logos/cdu.png => generated 8575 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 288 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 506/506] 1.121.138.128 () {56 vars in 1101 bytes} [Tue Oct 24 10:07:24 2023] GET /livingarchive/static/js/scripts.js => generated 1860 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 507/507] 1.121.138.128 () {56 vars in 1218 bytes} [Tue Oct 24 10:07:24 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 508/508] 1.121.138.128 () {56 vars in 1171 bytes} [Tue Oct 24 10:07:26 2023] GET /livingarchive/static/assets/favicon.ico => generated 2238 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 509/509] 1.121.138.128 () {60 vars in 1189 bytes} [Tue Oct 24 10:12:29 2023] GET / => generated 17262 bytes in 45 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 510/510] 1.121.138.128 () {60 vars in 1189 bytes} [Tue Oct 24 10:12:39 2023] GET / => generated 17262 bytes in 26 msecs (HTTP/1.1 200) 8 headers in 359 bytes (1 switches on core 0)
+[pid: 2109920|app: 0|req: 511/511] 1.121.138.128 () {56 vars in 1117 bytes} [Tue Oct 24 10:12:40 2023] GET /livingarchive/static/css/styles.css => generated 221049 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 512/512] 1.121.138.128 () {56 vars in 1123 bytes} [Tue Oct 24 10:12:40 2023] GET /livingarchive/static/css/home_page.css => generated 772 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 292 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 513/513] 1.121.138.128 () {56 vars in 1113 bytes} [Tue Oct 24 10:12:41 2023] GET /livingarchive/static/js/leafletscript.js => generated 5634 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 310 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 514/514] 1.121.138.128 () {56 vars in 1218 bytes} [Tue Oct 24 10:12:41 2023] GET /livingarchive/static/assets/img/header-bg.jpg => generated 638239 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 297 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 515/515] 1.121.138.128 () {56 vars in 1183 bytes} [Tue Oct 24 10:12:41 2023] GET /livingarchive/static/assets/img/logos/cdu.png => generated 8575 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 288 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 516/516] 1.121.138.128 () {56 vars in 1101 bytes} [Tue Oct 24 10:12:41 2023] GET /livingarchive/static/js/scripts.js => generated 1860 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 304 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 517/517] 1.121.138.128 () {56 vars in 1218 bytes} [Tue Oct 24 10:12:41 2023] GET /livingarchive/static/assets/img/map-image.png => generated 364038 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 296 bytes (0 switches on core 0)
+[pid: 2109920|app: 0|req: 518/518] 1.121.138.128 () {56 vars in 1171 bytes} [Tue Oct 24 10:12:44 2023] GET /livingarchive/static/assets/favicon.ico => generated 2238 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 307 bytes (0 switches on core 0)
