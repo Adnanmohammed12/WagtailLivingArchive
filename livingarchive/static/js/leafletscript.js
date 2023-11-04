@@ -1,14 +1,14 @@
                     // Define the map
-                    const map = L.map('map', { attributionControl: false }).setView([51.505, -0.13], 13); // Set your initial coordinates and zoom level
+                    const map = L.map('map', { attributionControl: false }).setView([51.480, -0.13], 13); // Set your initial coordinates and zoom level
                     // Add the image overlay layer with adjusted bounds for increased width
 	 const imageUrl = 'https://anyimage.io/storage/uploads/e5de371304e8a183f5c88238e0a6ad25';
-                    const imageBounds = [[51.53, -0.20], [51.48, -0.06]]; // Adjust the bounds for increased width
+                    const imageBounds = [[51.53, -0.20], [51.4, -0.10]]; // Adjust the bounds for increased width
                     L.imageOverlay(imageUrl, imageBounds).addTo(map);
                     const animalParts = [
         {
             name: 'Strings',
             coordinates: [
-                [51.524, -0.11], // mouth
+                [51.52, -0.11], // mouth
 
             ],
             videoUrl: '/strings',
@@ -17,7 +17,7 @@
         {
             name: 'Strings',
             coordinates: [
-                [51.524,  -0.078], // mouth
+                [51.44,  -0.14], // mouth
 
             ],
             videoUrl: '/strings',
@@ -26,7 +26,7 @@
         {
             name: 'Cashew nuts',
             coordinates: [
-                [51.524, -0.095], // mouth
+                [51.52, -0.14], // mouth
 
             ],
             videoUrl: '/cashew-nuts/',
@@ -35,7 +35,7 @@
 {
             name: 'Guwak',
             coordinates: [
-                [51.524, -0.159], //cashews 
+                [51.52, -0.159], //cashews 
 
             ],
             videoUrl: 'https://livingarchive.teachingforchange.edu.au/guwak-bird',
@@ -45,7 +45,7 @@
         {
             name: 'Possum',
             coordinates: [
-                [51.509, -0.08], // mouth
+                [51.509, -0.11], // mouth
 
             ],
             videoUrl: '/possum/',
@@ -55,51 +55,13 @@
         {
             name: 'Possums Strings',
             coordinates: [
-               [51.510, -0.18], // mouth
+               [51.515, -0.18], // mouth
 
             ],
             videoUrl: '/possum-strings',
             description: 'Possums gave their string to the Aboriginal people living in the area where they camped. There can be used tomanufature sacred objects to commemorate their visit',
         },
 
-        {
-            name: 'spear1',
-            coordinates: [
-                [51.498, -0.123], // mouth
-
-            ],
-            videoUrl: '',
-            description: 'spear1',
-        },
-        ,
-        {
-            name: 'spear2',
-            coordinates: [
-              [51.498, -0.14], // mouth
-
-            ],
-            videoUrl: '/acoustics-of-the-yidaki/',
-            description: 'spear2',
-        },        
-{
-            name: 'Location',
-            coordinates: [
-                [51.509, -0.159], // mouth
-
-            ],
-            videoUrl: '/',
-            description: 'Locating on map',
-        },
-        ,
-        {
-            name: 'Relation',
-            coordinates: [
-               [51.509, -0.095], // mouth
-
-            ],
-            videoUrl: '',
-            description: 'Relation to county',
-        },
         {
             name: 'lagoon',
             coordinates: [
