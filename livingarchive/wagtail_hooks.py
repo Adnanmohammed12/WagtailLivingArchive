@@ -3,7 +3,8 @@ from wagtail import hooks
 from wagtail.admin.menu import MenuItem
 from wagtail.models import PageViewRestriction
 from wagtail.wagtail_hooks import require_wagtail_login
-
+from django.utils.html import format_html
+from django.templatetags.static import static
 from blog.models import BlogDetailPage
 
 
@@ -75,3 +76,6 @@ def add_user_group_management_menu_item(request, menu_items):
 #         return pages
 #
 #     return pages.filter(owner=request.user)
+@hooks.register('insert_global_admin_css')
+def global_admin_css():
+    return format_html('<link rel="stylesheet" href="{}">', static('/css/admin_theme.css'))

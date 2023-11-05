@@ -16,7 +16,6 @@ import os
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 PASSWORD_REQUIRED_TEMPLATE = "password_required.html"
-
 from dotenv import load_dotenv
 keys = load_dotenv("./livingarchive/settings/.env")
 api_key = str(os.getenv("API_KEY"))
@@ -53,13 +52,13 @@ INSTALLED_APPS = [
     "wagtail.images",
     "wagtail.search",
     "wagtail.admin",
-    "wagtail.core",
+    "wagtail",
     "wagtailcaptcha",
     "captcha",
     "wagtailmenus",
     "user_group_management",
-    "wagtailstreamforms",
     "modelcluster",
+    "dashboard",
     "taggit",
     "allauth",
     "allauth.account",
