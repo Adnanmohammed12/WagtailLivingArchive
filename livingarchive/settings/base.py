@@ -59,7 +59,6 @@ INSTALLED_APPS = [
     "wagtailmenus",
     "user_group_management",
     "modelcluster",
-    "dashboard",
     "taggit",
     "allauth",
     "allauth.account",
