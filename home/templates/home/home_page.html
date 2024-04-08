@@ -160,7 +160,6 @@
 
                     string = "{% for post in posts %}{% image post.image fill-200x150 as blog_img %}{{blog_img.url}}@*&!{% endfor %}";
                     var imgs = string.split("@*&!");
-
                     var blogSet = {}
                     for (let i = 0; i < uids.length; i++) {
                         const uid = uids[i]
@@ -168,7 +167,6 @@
                         if (typeof (blogSet[uid]) === 'undefined') blogSet[uid] = []
                         blogSet[uid].push([title[i], address[i], i, intro[i], body[i], url[i], imgs[i], uid])
                     }
-
                     var map = L.map('map', { attributionControl: false }).setView([-24.3000384, 140.0782539], 4);
 
                     L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
