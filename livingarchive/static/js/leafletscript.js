@@ -38,7 +38,7 @@ const animalParts = [
             [51.52, -0.159], //cashews 
 
         ],
-        videoUrl: 'https://livingarchive.teachingforchange.edu.au/guwak-bird',
+        videoUrl: '/guwak-bird/',
         description: 'The Guwak flew into the casuarina trees, signified by the nuts in the top half of the painting',
     },
     ,
@@ -63,13 +63,13 @@ const animalParts = [
     },
 
     {
-        name: 'lagoon',
+        name: 'Lagoon',
         coordinates: [
             [51.485, -0.135], // mouth
 
         ],
-        videoUrl: 'https://gymbeam.com/blog/cashew-nuts-everything-you-need-to-know/',
-        description: 'Cashew nuts have positive effects on our body across our entire body. Despite the fact that half of their composition is fat, they help us to lose weight. At the same time, they prevent the formation of gallstones and scientific studies have confirmed that they are an effective fighter against digestive tract cancer. Learn why cashews can rightly be called a superfood..',
+        videoUrl: '/lagoon',
+        description: 'Lagoons are shallow, often elongated bodies of water separated from a larger body of water by a shallow or exposed shoal, coral reef, or similar feature...',
     },
 
 
