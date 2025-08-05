@@ -11,7 +11,6 @@ from wagtail.fields import StreamField
 # from mirage import fields
 from wagtail.models import Page
 from wagtail.documents.blocks import DocumentChooserBlock
-#from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.models import PAGE_TEMPLATE_VAR
 from wagtailgmaps.edit_handlers import MapFieldPanel
 from wagtailvideos.edit_handlers import VideoChooserPanel
